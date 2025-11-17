@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}iRiseUp Foundation{% endblock %}</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1a2332',
+                        'charcoal': '#2c3e50',
+                        'gold': '#d4af37',
+                        'amber': '#f59e0b',
+                        'teal': '#14b8a6',
+                        'turquoise': '#06b6d4',
+                        'off-white': '#faf9f6',
+                        'sand': '#f5f1e8',
+                        'soft-gray': '#f3f4f6',
+                    },
+                    fontFamily: {
+                        'heading': ['Inter', 'system-ui', 'sans-serif'],
+                        'body': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Inter', system-ui, sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .micro-text {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: #d4af37;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-off-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-navy/95 backdrop-blur-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="{% url 'home' %}" class="text-2xl font-bold text-white heading-font">
+                        iRiseUp
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{% url 'home' %}" class="text-gray-300 hover:text-gold transition-colors">Home</a>
+                    <a href="{% url 'about' %}" class="text-gray-300 hover:text-gold transition-colors">About</a>
+                    <a href="{% url 'core_beliefs' %}" class="text-gray-300 hover:text-gold transition-colors">Core Beliefs</a>
+                    <a href="{% url 'what_we_do' %}" class="text-gray-300 hover:text-gold transition-colors">What We Do</a>
+                    <a href="{% url 'events' %}" class="text-gray-300 hover:text-gold transition-colors">Events</a>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gray-300 hover:text-gold transition-colors">Mission Accomplished</a>
+                    <a href="{% url 'contact' %}" class="text-gray-300 hover:text-gold transition-colors">Contact</a>
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-2 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
+                        Give a Love Gift
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-gold">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-gray-700">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="{% url 'home' %}" class="block text-gray-300 hover:text-gold py-2">Home</a>
+                <a href="{% url 'about' %}" class="block text-gray-300 hover:text-gold py-2">About</a>
+                <a href="{% url 'core_beliefs' %}" class="block text-gray-300 hover:text-gold py-2">Core Beliefs</a>
+                <a href="{% url 'what_we_do' %}" class="block text-gray-300 hover:text-gold py-2">What We Do</a>
+                <a href="{% url 'events' %}" class="block text-gray-300 hover:text-gold py-2">Events</a>
+                <a href="{% url 'mission_accomplished' %}" class="block text-gray-300 hover:text-gold py-2">Mission Accomplished</a>
+                <a href="{% url 'contact' %}" class="block text-gray-300 hover:text-gold py-2">Contact</a>
+                <a href="{% url 'donate' %}" class="block bg-gold text-navy px-6 py-2 rounded-full font-semibold text-center mt-4">Give a Love Gift</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-gray-300 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Left: Logo & About -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white heading-font mb-4">iRiseUp Foundation</h3>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Empowering individuals and communities through leadership, mentorship, and education. 
+                        We are ambassadors for belonging.
+                    </p>
+                </div>
+                
+                <!-- Middle: Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{% url 'about' %}" class="hover:text-gold transition-colors">About</a></li>
+                        <li><a href="{% url 'what_we_do' %}" class="hover:text-gold transition-colors">Programs</a></li>
+                        <li><a href="{% url 'events' %}" class="hover:text-gold transition-colors">Events</a></li>
+                        <li><a href="{% url 'donate' %}" class="hover:text-gold transition-colors">Donate</a></li>
+                        <li><a href="{% url 'contact' %}" class="hover:text-gold transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">FAQs</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Privacy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Right: Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Get in Touch</h4>
+                    <div class="space-y-2 text-sm">
+                        <p><i class="fas fa-map-marker-alt text-gold mr-2"></i>Columbus, OH</p>
+                        <p><i class="fas fa-envelope text-gold mr-2"></i>info@iriseupfoundation.org</p>
+                        <p><i class="fas fa-phone text-gold mr-2"></i>(614) 555-0123</p>
+                    </div>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Strip -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2021–2025 iRiseUp Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu and scroll effects -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    
+    {% block extra_js %}
+    {% endblock %}
+</body>
+</html>
+

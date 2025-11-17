@@ -1,0 +1,54 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Programs - Dashboard{% endblock %}
+
+{% block content %}
+<div class="mb-8 flex justify-between items-center">
+    <div>
+        <h1 class="text-3xl font-bold text-navy mb-2">Programs</h1>
+        <p class="text-gray-600">Manage programs / What We Do section</p>
+    </div>
+    <a href="{% url 'dashboard:program_edit' %}" class="bg-gold text-navy px-6 py-2 rounded-lg hover:bg-amber">
+        <i class="fas fa-plus mr-2"></i> Add Program
+    </a>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for program in programs %}
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-start justify-between mb-4">
+            {% if program.icon %}
+            <i class="{{ program.icon }} text-3xl text-gold"></i>
+            {% endif %}
+            {% if program.is_active %}
+            <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">Active</span>
+            {% else %}
+            <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs">Inactive</span>
+            {% endif %}
+        </div>
+        <h3 class="text-xl font-bold text-navy mb-2">{{ program.title }}</h3>
+        {% if program.label %}
+        <p class="text-sm text-gray-500 mb-2">{{ program.label }}</p>
+        {% endif %}
+        <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ program.description|truncatewords:20 }}</p>
+        <div class="flex gap-2">
+            <a href="{% url 'dashboard:program_edit' program.id %}" class="flex-1 bg-gold text-navy px-4 py-2 rounded text-center hover:bg-amber text-sm">
+                Edit
+            </a>
+            <form method="post" action="{% url 'dashboard:program_delete' program.id %}" class="inline" onsubmit="return confirm('Delete this program?');">
+                {% csrf_token %}
+                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 text-sm">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-span-full text-center py-12 text-gray-500">
+        <i class="fas fa-list text-6xl mb-4"></i>
+        <p>No programs found. <a href="{% url 'dashboard:program_edit' %}" class="text-blue-600">Add one</a></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

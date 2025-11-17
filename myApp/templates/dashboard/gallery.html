@@ -1,0 +1,162 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Gallery - iRiseUp Dashboard{% endblock %}
+
+{% block content %}
+<div class="mb-8 flex justify-between items-center">
+    <div>
+        <h1 class="text-3xl font-bold text-navy mb-2">Image Gallery</h1>
+        <p class="text-gray-600">Upload and manage images</p>
+    </div>
+    <button onclick="openUploadModal()" class="bg-gold text-navy px-6 py-2 rounded-lg hover:bg-amber transition-colors">
+        <i class="fas fa-upload mr-2"></i> Upload Image
+    </button>
+</div>
+
+<!-- Upload Modal -->
+<div id="uploadModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md w-full">
+        <h2 class="text-2xl font-bold text-navy mb-4">Upload Image</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Image File</label>
+                <input type="file" name="image" id="imageInput" accept="image/*" required
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Title (optional)</label>
+                <input type="text" name="title" id="titleInput"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">Folder</label>
+                <input type="text" name="folder" value="iriseup"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+            </div>
+            <div class="flex gap-4">
+                <button type="submit" class="flex-1 bg-gold text-navy px-4 py-2 rounded-lg hover:bg-amber">
+                    Upload
+                </button>
+                <button type="button" onclick="closeUploadModal()" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Search -->
+<div class="mb-6">
+    <form method="get" class="flex gap-4">
+        <input type="text" name="search" value="{{ search_query }}" placeholder="Search images..."
+               class="flex-1 px-4 py-2 border border-gray-300 rounded-lg">
+        <button type="submit" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-gray-800">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+</div>
+
+<!-- Image Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {% for image in page_obj %}
+    <div class="bg-white rounded-lg shadow overflow-hidden group relative">
+        <img src="{{ image.thumbnail_url|default:image.original_url }}" alt="{{ image.title }}" 
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+            <p class="text-sm font-semibold text-navy truncate">{{ image.title|default:"Untitled" }}</p>
+            <p class="text-xs text-gray-500">{{ image.folder }}</p>
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+            <div class="flex gap-2">
+                <button onclick="copyUrl('{{ image.original_url }}')" class="bg-white text-navy px-3 py-1 rounded text-sm hover:bg-gray-100">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button onclick="deleteImage({{ image.id }})" class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-span-full text-center py-12 text-gray-500">
+        <i class="fas fa-images text-6xl mb-4"></i>
+        <p>No images found. Upload your first image!</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Pagination -->
+{% if page_obj.has_other_pages %}
+<div class="mt-8 flex justify-center">
+    <div class="flex gap-2">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" 
+           class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100">
+            Previous
+        </a>
+        {% endif %}
+        
+        <span class="px-4 py-2 bg-gold text-navy rounded-lg">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" 
+           class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100">
+            Next
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+{% block extra_js %}
+<script>
+function openUploadModal() {
+    document.getElementById('uploadModal').classList.remove('hidden');
+}
+
+function closeUploadModal() {
+    document.getElementById('uploadModal').classList.add('hidden');
+    document.getElementById('uploadForm').reset();
+}
+
+document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const response = await fetch('{% url "dashboard:upload_image" %}', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+        }
+    });
+    
+    if (response.ok) {
+        location.reload();
+    } else {
+        alert('Upload failed');
+    }
+});
+
+function copyUrl(url) {
+    navigator.clipboard.writeText(url);
+    alert('URL copied to clipboard!');
+}
+
+function deleteImage(id) {
+    if (confirm('Are you sure you want to delete this image?')) {
+        fetch(`/dashboard/delete-image/${id}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/json'
+            }
+        }).then(() => location.reload());
+    }
+}
+</script>
+{% endblock %}
+{% endblock %}
+

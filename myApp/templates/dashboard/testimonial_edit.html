@@ -1,0 +1,69 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}{% if testimonial.id %}Edit{% else %}Add{% endif %} Testimonial - Dashboard{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-navy mb-2">{% if testimonial.id %}Edit{% else %}Add{% endif %} Testimonial</h1>
+</div>
+
+<form method="post" class="bg-white rounded-lg shadow p-6">
+    {% csrf_token %}
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">Name *</label>
+            <input type="text" name="name" value="{{ testimonial.name }}" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">Role</label>
+            <input type="text" name="role" value="{{ testimonial.role }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Quote *</label>
+        <textarea name="quote" rows="4" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg">{{ testimonial.quote }}</textarea>
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Avatar URL</label>
+        <input type="url" name="avatar_url" value="{{ testimonial.avatar_url }}" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Icon (FontAwesome class)</label>
+        <input type="text" name="icon" value="{{ testimonial.icon }}" 
+               placeholder="e.g., fas fa-user"
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Sort Order</label>
+        <input type="number" name="sort_order" value="{{ testimonial.sort_order|default:0 }}" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <label class="flex items-center">
+            <input type="checkbox" name="is_active" {% if testimonial.is_active %}checked{% endif %} 
+                   class="mr-2">
+            <span class="text-gray-700 font-bold">Active</span>
+        </label>
+    </div>
+    
+    <div class="flex gap-4">
+        <button type="submit" class="bg-gold text-navy px-6 py-2 rounded-lg hover:bg-amber">
+            Save
+        </button>
+        <a href="{% url 'dashboard:testimonials_list' %}" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400">
+            Cancel
+        </a>
+    </div>
+</form>
+{% endblock %}
+

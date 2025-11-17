@@ -1,0 +1,59 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Edit SEO - Dashboard{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-navy mb-2">Edit SEO</h1>
+    <p class="text-gray-600">Page: {{ page }}</p>
+</div>
+
+<form method="post" class="bg-white rounded-lg shadow p-6">
+    {% csrf_token %}
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Page Title *</label>
+        <input type="text" name="title" value="{{ seo.title }}" required
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Meta Description</label>
+        <textarea name="description" rows="3" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg">{{ seo.description }}</textarea>
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Keywords</label>
+        <input type="text" name="keywords" value="{{ seo.keywords }}" 
+               placeholder="comma-separated keywords"
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <h3 class="text-lg font-bold text-navy mb-4">Open Graph (Social Media)</h3>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2">OG Title</label>
+            <input type="text" name="og_title" value="{{ seo.og_title }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2">OG Description</label>
+            <textarea name="og_description" rows="3" 
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg">{{ seo.og_description }}</textarea>
+        </div>
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">OG Image URL</label>
+            <input type="url" name="og_image" value="{{ seo.og_image }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+    </div>
+    
+    <div class="flex gap-4">
+        <button type="submit" class="bg-gold text-navy px-6 py-2 rounded-lg hover:bg-amber">
+            Save Changes
+        </button>
+    </div>
+</form>
+{% endblock %}
+

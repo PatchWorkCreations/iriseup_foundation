@@ -1,0 +1,233 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}About Us - iRiseUp Foundation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">OUR STORY</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                We are ambassadors for belonging.
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                A non-profit community supporting programs focused on mentorship, education, and empowerment.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Story Section -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+            <h2 class="text-3xl font-bold heading-font text-navy mb-6">Why We Started</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                iRiseUp Foundation was born from a simple belief: everyone deserves to belong, to thrive, 
+                and to rise above their circumstances. Founded in 2021, we began with a vision to create 
+                spaces where individuals and communities could find hope, healing, and empowerment.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                What started as a small community initiative has grown into a global movement, touching 
+                lives in the United States and the Philippines. We've learned that transformation happens 
+                when people feel seen, valued, and supported.
+            </p>
+            
+            <h2 class="text-3xl font-bold heading-font text-navy mb-6 mt-12">Where We Are Now</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Today, iRiseUp Foundation supports multiple programs across education, leadership development, 
+                mental health, disaster relief, and youth empowerment. We've reached hundreds of children, 
+                empowered countless youth, and served communities on two continents.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                But numbers only tell part of the story. The real impact is in the transformed lives, 
+                the restored hope, and the communities that have learned to rise together.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Values Preview -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">OUR VALUES</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Core Beliefs
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                The principles that guide everything we do
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-2">Compassion</h3>
+                <p class="text-gray-600">Meeting people where they are with love and understanding</p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-2">Belonging</h3>
+                <p class="text-gray-600">Creating spaces where everyone feels valued and included</p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-2">Service</h3>
+                <p class="text-gray-600">Walking alongside others in their journey toward wholeness</p>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <a href="{% url 'core_beliefs' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift inline-block">
+                Explore Our Core Beliefs
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<section class="py-20 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">LEADERSHIP</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Leadership & Ambassadors
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Leader Card 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 to-teal/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user text-4xl text-navy/50"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-2">Founder Name</h3>
+                <p class="text-gray-600 mb-4">Founder & Executive Director</p>
+                <p class="text-sm text-gray-600">
+                    Visionary leader committed to empowering communities and transforming lives.
+                </p>
+            </div>
+            
+            <!-- Leader Card 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-teal/20 to-gold/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user text-4xl text-navy/50"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-2">Ambassador Name</h3>
+                <p class="text-gray-600 mb-4">Program Director</p>
+                <p class="text-sm text-gray-600">
+                    Dedicated to creating meaningful programs that make a lasting impact.
+                </p>
+            </div>
+            
+            <!-- Leader Card 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 to-teal/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user text-4xl text-navy/50"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-2">Ambassador Name</h3>
+                <p class="text-gray-600 mb-4">Community Outreach Coordinator</p>
+                <p class="text-sm text-gray-600">
+                    Building bridges between communities and creating spaces for belonging.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Global Footprint -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">GLOBAL REACH</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Our Global Footprint
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- US Section -->
+            <div class="bg-off-white rounded-xl p-8">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-flag-usa"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-navy mb-4">United States</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
+                        <span>Inner-city education programs (CLICK)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
+                        <span>Youth camps and mentorship</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
+                        <span>Mental health and wellness support</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
+                        <span>Leadership development programs</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Philippines Section -->
+            <div class="bg-off-white rounded-xl p-8">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-navy mb-4">Philippines</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
+                        <span>Feed. Teach. Love. programs</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
+                        <span>Disaster relief and rebuilding</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
+                        <span>Coastal community support</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
+                        <span>Education and skills training</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
+            Join Our Journey
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Be part of a movement that's transforming lives and communities. 
+            Whether you volunteer, donate, or partner with us, your involvement matters.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
+                Donate
+            </a>
+            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
+                Volunteer
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

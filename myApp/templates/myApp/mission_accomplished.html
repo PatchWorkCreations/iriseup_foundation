@@ -1,0 +1,211 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}Mission Accomplished - Impact Stories - iRiseUp Foundation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">IMPACT STORIES</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                Mission Accomplished
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                Real stories of transformation and hope
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stories Grid -->
+<section class="pt-20 pb-0 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Story 1 - CLICK -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-laptop text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">CLICK</h3>
+                    <p class="text-sm text-gray-500 mb-4">Computer Learning for Inner City Kids</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Providing technology access and education to underserved youth, opening doors 
+                        to new possibilities. Through CLICK, children who had never touched a computer 
+                        are now learning coding, digital skills, and discovering their potential.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-navy mb-2">Impact:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 100+ children reached</li>
+                            <li>• Technology labs established</li>
+                            <li>• Scholarships awarded</li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Story 2 - Rebuilding Philippines -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-gold/30 to-teal/30 flex items-center justify-center">
+                    <i class="fas fa-hammer text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Rebuilding Philippines</h3>
+                    <p class="text-sm text-gray-500 mb-4">Disaster Response & Recovery</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Responding to natural disasters with immediate aid and long-term rebuilding efforts. 
+                        After Storm Paeng/Nalgae, we provided emergency supplies, rebuilt homes, and restored 
+                        hope to affected communities.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-navy mb-2">Impact:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 50+ families supported</li>
+                            <li>• Homes rebuilt</li>
+                            <li>• Communities restored</li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Story 3 - Yes to Life! -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-fire text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Yes to Life! Youth Camp</h3>
+                    <p class="text-sm text-gray-500 mb-4">Transformative Camp Experience</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Transformative camp experiences that inspire youth to embrace life fully. 
+                        Building confidence, community, and character. Youth leave with new friendships, 
+                        renewed hope, and the courage to say "Yes to Life!"
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-navy mb-2">Impact:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 200+ youth empowered</li>
+                            <li>• Lifelong friendships formed</li>
+                            <li>• Confidence built</li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Story 4 - Feed. Teach. Love. -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-gold/30 to-teal/30 flex items-center justify-center">
+                    <i class="fas fa-heart text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Feed. Teach. Love.</h3>
+                    <p class="text-sm text-gray-500 mb-4">Nourishing Bodies, Minds & Hearts</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Providing meals, education, and love to children in need. Every child deserves 
+                        to know they matter. Through Feed. Teach. Love., we've nourished hundreds of 
+                        children and shown them unconditional care.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-navy mb-2">Impact:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 500+ children reached</li>
+                            <li>• Thousands of meals served</li>
+                            <li>• Educational support provided</li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Story 5 - Leadership Development -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-user-graduate text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Leadership Development</h3>
+                    <p class="text-sm text-gray-500 mb-4">Empowering Future Leaders</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Empowering individuals to become leaders in their communities. Through mentorship 
+                        and training, we've seen people discover their leadership potential and create 
+                        positive change in their communities.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-navy mb-2">Impact:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 150+ leaders trained</li>
+                            <li>• Mentorship networks created</li>
+                            <li>• Community impact multiplied</li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Story 6 - Mental Health Support -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-gold/30 to-teal/30 flex items-center justify-center">
+                    <i class="fas fa-brain text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Mental Health & Wellness</h3>
+                    <p class="text-sm text-gray-500 mb-4">Supporting Emotional Well-being</p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Creating safe spaces for healing and growth. Through counseling, support groups, 
+                        and wellness programs, we've helped individuals find hope and healing on their 
+                        mental health journey.
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-sm font-semibold text-navy mb-2">Impact:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 100+ individuals supported</li>
+                            <li>• Support groups established</li>
+                            <li>• Stigma reduced</li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="pt-20 pb-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
+            Be Part of the Next Story
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Every story of transformation starts with someone who said yes. Your support helps us 
+            write the next chapter of hope and healing.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
+                Give a Love Gift
+            </a>
+            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
+                Get Involved
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

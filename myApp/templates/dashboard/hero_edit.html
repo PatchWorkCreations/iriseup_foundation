@@ -1,0 +1,72 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Edit Hero - Dashboard{% endblock %}
+
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-navy mb-2">Edit Hero Section</h1>
+    <p class="text-gray-600">Page: {{ page }}</p>
+</div>
+
+<form method="post" class="bg-white rounded-lg shadow p-6">
+    {% csrf_token %}
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Label (optional)</label>
+        <input type="text" name="label" value="{{ hero.label }}" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Headline *</label>
+        <input type="text" name="headline" value="{{ hero.headline }}" required
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Subtext</label>
+        <textarea name="subtext" rows="3" 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg">{{ hero.subtext }}</textarea>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">Primary Button Text</label>
+            <input type="text" name="primary_button_text" value="{{ hero.primary_button_text }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">Primary Button URL</label>
+            <input type="text" name="primary_button_url" value="{{ hero.primary_button_url }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">Secondary Button Text</label>
+            <input type="text" name="secondary_button_text" value="{{ hero.secondary_button_text }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+        <div>
+            <label class="block text-gray-700 font-bold mb-2">Secondary Button URL</label>
+            <input type="text" name="secondary_button_url" value="{{ hero.secondary_button_url }}" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        </div>
+    </div>
+    
+    <div class="mb-6">
+        <label class="block text-gray-700 font-bold mb-2">Background Image URL</label>
+        <input type="url" name="background_image_url" value="{{ hero.background_image_url }}" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+        <p class="text-sm text-gray-500 mt-1">Use an image URL from the gallery</p>
+    </div>
+    
+    <div class="flex gap-4">
+        <button type="submit" class="bg-gold text-navy px-6 py-2 rounded-lg hover:bg-amber">
+            Save Changes
+        </button>
+        <a href="{% url 'dashboard:gallery' %}" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400">
+            Browse Gallery
+        </a>
+    </div>
+</form>
+{% endblock %}
+

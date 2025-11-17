@@ -1,0 +1,55 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Testimonials - Dashboard{% endblock %}
+
+{% block content %}
+<div class="mb-8 flex justify-between items-center">
+    <div>
+        <h1 class="text-3xl font-bold text-navy mb-2">Testimonials</h1>
+        <p class="text-gray-600">Manage testimonials</p>
+    </div>
+    <a href="{% url 'dashboard:testimonial_edit' %}" class="bg-gold text-navy px-6 py-2 rounded-lg hover:bg-amber">
+        <i class="fas fa-plus mr-2"></i> Add Testimonial
+    </a>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for testimonial in testimonials %}
+    <div class="bg-white rounded-lg shadow p-6">
+        <div class="flex items-center mb-4">
+            {% if testimonial.icon %}
+            <i class="{{ testimonial.icon }} text-3xl text-gold mr-4"></i>
+            {% elif testimonial.avatar_url %}
+            <img src="{{ testimonial.avatar_url }}" alt="{{ testimonial.name }}" class="w-16 h-16 rounded-full">
+            {% else %}
+            <div class="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center">
+                <i class="fas fa-user text-2xl text-gold"></i>
+            </div>
+            {% endif %}
+            <div>
+                <h3 class="font-bold text-navy">{{ testimonial.name }}</h3>
+                <p class="text-sm text-gray-600">{{ testimonial.role }}</p>
+            </div>
+        </div>
+        <p class="text-gray-700 italic mb-4 line-clamp-3">"{{ testimonial.quote|truncatewords:20 }}"</p>
+        <div class="flex gap-2">
+            <a href="{% url 'dashboard:testimonial_edit' testimonial.id %}" class="flex-1 bg-gold text-navy px-4 py-2 rounded text-center hover:bg-amber text-sm">
+                Edit
+            </a>
+            <form method="post" action="{% url 'dashboard:testimonial_delete' testimonial.id %}" class="inline" onsubmit="return confirm('Delete this testimonial?');">
+                {% csrf_token %}
+                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 text-sm">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-span-full text-center py-12 text-gray-500">
+        <i class="fas fa-quote-left text-6xl mb-4"></i>
+        <p>No testimonials found. <a href="{% url 'dashboard:testimonial_edit' %}" class="text-blue-600">Add one</a></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

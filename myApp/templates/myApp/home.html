@@ -1,0 +1,478 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}iRiseUp Foundation - Helping Hearts Rise{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-navy via-charcoal to-navy min-h-screen flex items-center overflow-hidden">
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Content -->
+            <div class="text-white fade-in">
+                <p class="micro-text text-gold mb-4">NON-PROFIT FOUNDATION · GLOBAL COMMUNITY</p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold heading-font mb-6 leading-tight">
+                    Helping hearts rise, communities heal, and young lives thrive.
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Empowering individuals and communities through leadership, mentorship, and education. 
+                    We support programs in the US and Philippines that help people thrive, not just survive.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber transition-all hover-lift text-center">
+                        Give a Love Gift
+                    </a>
+                    <a href="{% url 'about' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-navy transition-all text-center">
+                        Explore Our Mission
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right: Image Placeholder -->
+            <div class="relative fade-in">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-teal/20 to-gold/20 flex items-center justify-center">
+                        <i class="fas fa-users text-6xl text-white/30"></i>
+                    </div>
+                    <!-- You can replace this with an actual image -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- At a Glance - Impact Stats -->
+<section class="py-16 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Stat Card 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
+                <div class="text-4xl text-gold mb-4">
+                    <i class="fas fa-child"></i>
+                </div>
+                <div class="text-4xl font-bold text-navy mb-2">500+</div>
+                <p class="text-gray-600">Children reached through Feed. Teach. Love.</p>
+            </div>
+            
+            <!-- Stat Card 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
+                <div class="text-4xl text-teal mb-4">
+                    <i class="fas fa-campground"></i>
+                </div>
+                <div class="text-4xl font-bold text-navy mb-2">200+</div>
+                <p class="text-gray-600">Youth empowered through camps</p>
+            </div>
+            
+            <!-- Stat Card 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
+                <div class="text-4xl text-gold mb-4">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <div class="text-4xl font-bold text-navy mb-2">15+</div>
+                <p class="text-gray-600">Communities served in Philippines & US</p>
+            </div>
+            
+            <!-- Stat Card 4 -->
+            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
+                <div class="text-4xl text-teal mb-4">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="text-4xl font-bold text-navy mb-2">2021</div>
+                <p class="text-gray-600">Year of founding</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Who We Are -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Text -->
+            <div>
+                <p class="micro-text text-gold mb-4">ABOUT</p>
+                <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-6">
+                    We are ambassadors for belonging.
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    iRiseUp Foundation is a non-profit community supporting programs focused on mentorship, 
+                    education, and empowerment. We believe that everyone deserves to belong, to thrive, 
+                    and to rise above their circumstances.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    From inner-city kids to coastal communities in the Philippines, we show up where hope is needed.
+                </p>
+            </div>
+            
+            <!-- Right: Image -->
+            <div class="relative">
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-6xl text-navy/30"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Do - Programs Grid -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">PROGRAMS</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                What We Do
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                We don't just run programs. We walk with people.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Program Card 1 -->
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-8 card-hover">
+                <p class="micro-text text-gold mb-4">PROGRAM</p>
+                <h3 class="text-2xl font-bold text-navy mb-4">Leadership Development</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Empowering individuals to become leaders in their communities through mentorship, 
+                    training, and personal development programs.
+                </p>
+                <a href="{% url 'what_we_do' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn more <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Program Card 2 -->
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-8 card-hover">
+                <p class="micro-text text-gold mb-4">PROGRAM</p>
+                <h3 class="text-2xl font-bold text-navy mb-4">Feed. Teach. Love.</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Providing meals, education, and love to children in need. Nourishing bodies, 
+                    minds, and hearts in communities across the Philippines and US.
+                </p>
+                <a href="{% url 'what_we_do' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn more <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Program Card 3 -->
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-8 card-hover">
+                <p class="micro-text text-gold mb-4">PROGRAM</p>
+                <h3 class="text-2xl font-bold text-navy mb-4">Mental Health & Wellness</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Supporting mental health and emotional well-being through counseling, 
+                    support groups, and wellness programs.
+                </p>
+                <a href="{% url 'what_we_do' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn more <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Program Card 4 -->
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-8 card-hover">
+                <p class="micro-text text-gold mb-4">PROGRAM</p>
+                <h3 class="text-2xl font-bold text-navy mb-4">Youth Camps (Yes to Life!)</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Transformative camp experiences that inspire youth to say "Yes to Life!" 
+                    Building confidence, community, and character.
+                </p>
+                <a href="{% url 'what_we_do' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn more <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Program Card 5 -->
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-8 card-hover">
+                <p class="micro-text text-gold mb-4">PROGRAM</p>
+                <h3 class="text-2xl font-bold text-navy mb-4">Education & Training</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Providing educational opportunities and skills training to empower individuals 
+                    and communities for long-term success.
+                </p>
+                <a href="{% url 'what_we_do' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn more <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Program Card 6 -->
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-8 card-hover">
+                <p class="micro-text text-gold mb-4">PROGRAM</p>
+                <h3 class="text-2xl font-bold text-navy mb-4">Disaster Relief</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Responding to natural disasters with immediate aid and long-term rebuilding 
+                    efforts, especially in the Philippines.
+                </p>
+                <a href="{% url 'what_we_do' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn more <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Story - Feed. Teach. Love. -->
+<section class="py-20 bg-gradient-to-br from-teal/10 via-white to-gold/10 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;40&quot; height=&quot;40&quot; viewBox=&quot;0 0 40 40&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;%23000000&quot; fill-opacity=&quot;0.1&quot;%3E%3Cpath d=&quot;M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20.5zM0 20h2v2H0v-2zm4 0h2v2H4v-2zm4 0h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm4 4h2v2h-2v-2zm0-4h2v2h-2v-2z&quot;/%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Image -->
+            <div class="relative">
+                <div class="rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-teal/40 to-gold/40 flex items-center justify-center">
+                        <i class="fas fa-heart text-6xl text-white/50"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right: Content -->
+            <div>
+                <p class="micro-text text-gold mb-4">FEATURED STORY</p>
+                <blockquote class="text-3xl md:text-4xl font-bold heading-font text-navy mb-6 italic">
+                    "I want people to thrive, not just survive."
+                </blockquote>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Feed. Teach. Love. is more than a program—it's a movement. We provide nutritious meals 
+                    to children who need them most, but we don't stop there. We teach, we mentor, and most 
+                    importantly, we show love. Every child deserves to know they matter.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{% url 'mission_accomplished' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all hover-lift text-center">
+                        Read the Story
+                    </a>
+                    <a href="{% url 'donate' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Support Feed. Teach. Love.
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Retreat Highlight -->
+<section class="py-20 bg-gradient-to-br from-charcoal via-navy to-charcoal text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23 11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-15c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z&quot; fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.1&quot;/%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">UPCOMING RETREAT</p>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                A Heart of Remembrance
+            </h2>
+            <p class="text-xl text-gray-300 mb-6">
+                May 23–26, 2025 · Mepkin Abbey Retreat Center · Moncks Corner, SC
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto">
+                Join us for a time of spiritual reflection, remembrance, and healing. 
+                A sacred space to honor the past, embrace the present, and look forward with hope.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{% url 'events' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber transition-all hover-lift">
+                    View Retreat Details
+                </a>
+                <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-navy transition-all">
+                    Join the Interest List
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">VOICES</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                What People Are Saying
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-sand rounded-xl p-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-2xl text-gold"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy">Marvy S.</h4>
+                        <p class="text-sm text-gray-600">Participant</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic leading-relaxed">
+                    "iRiseUp changed my life. The mentorship I received helped me see my own potential 
+                    and gave me the courage to pursue my dreams."
+                </p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-sand rounded-xl p-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-teal/20 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-2xl text-teal"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy">Joshua</h4>
+                        <p class="text-sm text-gray-600">Supporter</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic leading-relaxed">
+                    "Seeing the impact in the Philippines firsthand was incredible. These programs 
+                    are truly transforming communities."
+                </p>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="bg-sand rounded-xl p-8 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-2xl text-gold"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy">Emily D.</h4>
+                        <p class="text-sm text-gray-600">Donor</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic leading-relaxed">
+                    "I love knowing my donation is going directly to programs that make a real difference. 
+                    The transparency and impact are clear."
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Accomplished - Impact Stories -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">IMPACT</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Mission Accomplished
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Real stories of transformation and hope
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Impact Story 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-laptop text-5xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">CLICK</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Computer Learning for Inner City Kids. Providing technology access and 
+                        education to underserved youth, opening doors to new possibilities.
+                    </p>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Story <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Impact Story 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-gold/30 to-teal/30 flex items-center justify-center">
+                    <i class="fas fa-hammer text-5xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Rebuilding Philippines</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Responding to natural disasters with immediate aid and long-term rebuilding 
+                        efforts, restoring hope and homes to affected communities.
+                    </p>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Story <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Impact Story 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-fire text-5xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-3">Yes to Life! Youth Camp</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Transformative camp experiences that inspire youth to embrace life fully, 
+                        building confidence, community, and character.
+                    </p>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Story <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                Rise with us.
+            </h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Whether you give, volunteer, or share our mission, your yes helps someone else rise.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- CTA Card 1 -->
+            <div class="text-center">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Donate</h3>
+                <p class="text-gray-300">
+                    Your generosity helps children eat, learn, heal, and hope again.
+                </p>
+            </div>
+            
+            <!-- CTA Card 2 -->
+            <div class="text-center">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Volunteer / Serve</h3>
+                <p class="text-gray-300">
+                    Join us in making a difference through hands-on service and mentorship.
+                </p>
+            </div>
+            
+            <!-- CTA Card 3 -->
+            <div class="text-center">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Partner</h3>
+                <p class="text-gray-300">
+                    Churches, schools, and organizations can partner with us to amplify impact.
+                </p>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <a href="{% url 'donate' %}" class="bg-gold text-navy px-10 py-5 rounded-full font-semibold text-xl hover:bg-amber transition-all hover-lift inline-block">
+                Give a Love Gift
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

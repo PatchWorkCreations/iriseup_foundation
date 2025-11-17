@@ -1,0 +1,281 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}What We Do - iRiseUp Foundation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">OUR PROGRAMS</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                What We Do
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                We don't just run programs. We walk with people.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Programs Grid -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Program 1 -->
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Leadership Development</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Empowering individuals to become leaders in their communities through mentorship, 
+                    training, and personal development programs. We believe everyone has leadership 
+                    potential waiting to be unlocked.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Goals:</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Develop confident, capable leaders</li>
+                            <li>Build mentorship networks</li>
+                            <li>Create sustainable community impact</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Who it serves:</h3>
+                        <p class="text-gray-600">Adults and youth seeking to develop leadership skills</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Where:</h3>
+                        <p class="text-gray-600">United States and Philippines</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                        Support This Program
+                    </a>
+                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Volunteer
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Program 2 -->
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Feed. Teach. Love.</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Providing meals, education, and love to children in need. Nourishing bodies, 
+                    minds, and hearts in communities across the Philippines and US. Every child 
+                    deserves to know they matter.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Goals:</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Provide nutritious meals to children</li>
+                            <li>Offer educational support and tutoring</li>
+                            <li>Show unconditional love and care</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Who it serves:</h3>
+                        <p class="text-gray-600">Children and families in need</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Where:</h3>
+                        <p class="text-gray-600">Philippines and United States</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                        Support This Program
+                    </a>
+                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Volunteer
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Program 3 -->
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Mental Health & Wellness</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Supporting mental health and emotional well-being through counseling, support groups, 
+                    and wellness programs. We believe mental health is just as important as physical health.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Goals:</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Provide accessible mental health support</li>
+                            <li>Create safe spaces for healing</li>
+                            <li>Reduce stigma around mental health</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Who it serves:</h3>
+                        <p class="text-gray-600">Individuals and families seeking mental health support</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Where:</h3>
+                        <p class="text-gray-600">United States</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                        Support This Program
+                    </a>
+                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Volunteer
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Program 4 -->
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-campground"></i>
+                </div>
+                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Youth Camps (Yes to Life!)</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Transformative camp experiences that inspire youth to say "Yes to Life!" Building 
+                    confidence, community, and character through outdoor activities, mentorship, and 
+                    meaningful connections.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Goals:</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Build confidence and self-esteem</li>
+                            <li>Create lasting friendships and community</li>
+                            <li>Inspire youth to embrace life fully</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Who it serves:</h3>
+                        <p class="text-gray-600">Youth ages 12-18</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Where:</h3>
+                        <p class="text-gray-600">United States</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{% url 'events' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                        View Upcoming Camps
+                    </a>
+                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Volunteer
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Program 5 -->
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Education & Training</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Providing educational opportunities and skills training to empower individuals and 
+                    communities for long-term success. Education is the foundation for transformation.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Goals:</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Increase access to quality education</li>
+                            <li>Provide skills training for employment</li>
+                            <li>Support academic achievement</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Who it serves:</h3>
+                        <p class="text-gray-600">Students and adults seeking education and training</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Where:</h3>
+                        <p class="text-gray-600">United States and Philippines</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                        Support This Program
+                    </a>
+                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Volunteer
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Program 6 -->
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-hammer"></i>
+                </div>
+                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Disaster Relief</h2>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Responding to natural disasters with immediate aid and long-term rebuilding efforts. 
+                    We show up when communities need us most, providing both emergency relief and 
+                    sustainable recovery support.
+                </p>
+                <div class="space-y-3 mb-6">
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Goals:</h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Provide immediate disaster relief</li>
+                            <li>Support long-term rebuilding efforts</li>
+                            <li>Restore hope and stability</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Who it serves:</h3>
+                        <p class="text-gray-600">Communities affected by natural disasters</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-navy mb-2">Where:</h3>
+                        <p class="text-gray-600">Primarily Philippines</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                        Support This Program
+                    </a>
+                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                        Volunteer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
+            Support Our Programs
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Every program makes a difference. Your support helps us continue walking with people 
+            and transforming communities.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
+                Give a Love Gift
+            </a>
+            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
+                Get Involved
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

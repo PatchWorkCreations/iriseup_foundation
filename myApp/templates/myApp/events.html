@@ -1,0 +1,210 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}Events - iRiseUp Foundation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">UPCOMING & PAST EVENTS</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                Events
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                Join us for retreats, camps, and community gatherings
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Events -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <p class="micro-text text-gold mb-4">UPCOMING</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Upcoming Events
+            </h2>
+        </div>
+        
+        <!-- Featured Event - Retreat -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-xl mb-12 card-hover">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-mountain text-6xl text-navy/30"></i>
+                </div>
+                <div class="p-8 lg:p-12">
+                    <p class="micro-text text-gold mb-4">FEATURED EVENT</p>
+                    <h3 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4">
+                        A Heart of Remembrance
+                    </h3>
+                    <div class="space-y-3 mb-6">
+                        <p class="text-lg text-gray-700">
+                            <i class="fas fa-calendar text-gold mr-2"></i>
+                            <strong>May 23–26, 2025</strong>
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            <i class="fas fa-map-marker-alt text-teal mr-2"></i>
+                            Mepkin Abbey Retreat Center, Moncks Corner, SC
+                        </p>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Join us for a time of spiritual reflection, remembrance, and healing. 
+                        A sacred space to honor the past, embrace the present, and look forward with hope. 
+                        This retreat offers a unique opportunity to connect with yourself, others, and the divine.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="{% url 'contact' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
+                            View Details
+                        </a>
+                        <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
+                            Join Interest List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Other Upcoming Events -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Event Card 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                <div class="text-4xl text-gold mb-4">
+                    <i class="fas fa-campground"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-navy mb-3">Yes to Life! Youth Camp</h3>
+                <p class="text-gray-600 mb-4">
+                    <i class="fas fa-calendar text-gold mr-2"></i>
+                    Summer 2025
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Transformative camp experience for youth ages 12-18. Building confidence, 
+                    community, and character through outdoor activities and mentorship.
+                </p>
+                <a href="{% url 'contact' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Event Card 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                <div class="text-4xl text-teal mb-4">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-navy mb-3">Community Gathering</h3>
+                <p class="text-gray-600 mb-4">
+                    <i class="fas fa-calendar text-gold mr-2"></i>
+                    Quarterly
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Join us for our quarterly community gatherings. Connect with others, 
+                    share stories, and be part of the iRiseUp family.
+                </p>
+                <a href="{% url 'contact' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Past Events -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <p class="micro-text text-gold mb-4">HIGHLIGHTS</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Past Events & Highlights
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Past Event 1 -->
+            <div class="bg-off-white rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-gold/30 to-teal/30 flex items-center justify-center">
+                    <i class="fas fa-fire text-5xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-2">Yes to Life! 2024</h3>
+                    <p class="text-gray-600 mb-3">
+                        <i class="fas fa-calendar text-gold mr-2"></i>
+                        Summer 2024
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        An incredible week of transformation, community, and growth. 
+                        Youth left inspired and empowered to say "Yes to Life!"
+                    </p>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Recap <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Past Event 2 -->
+            <div class="bg-off-white rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-teal/30 to-gold/30 flex items-center justify-center">
+                    <i class="fas fa-heart text-5xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-2">Feed. Teach. Love. Outreach</h3>
+                    <p class="text-gray-600 mb-3">
+                        <i class="fas fa-calendar text-gold mr-2"></i>
+                        Philippines, 2024
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Serving hundreds of children with meals, education, and love. 
+                        A powerful reminder of why we do what we do.
+                    </p>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Story <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Past Event 3 -->
+            <div class="bg-off-white rounded-xl overflow-hidden shadow-md card-hover">
+                <div class="aspect-[4/3] bg-gradient-to-br from-gold/30 to-teal/30 flex items-center justify-center">
+                    <i class="fas fa-hands-helping text-5xl text-navy/30"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-navy mb-2">Leadership Summit</h3>
+                    <p class="text-gray-600 mb-3">
+                        <i class="fas fa-calendar text-gold mr-2"></i>
+                        Fall 2024
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Empowering leaders from across our communities to create lasting change 
+                        and build stronger networks of support.
+                    </p>
+                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Recap <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
+            Join Us at Our Next Event
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Whether it's a retreat, camp, or community gathering, we'd love to have you with us. 
+            Connect with us to stay updated on upcoming events.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'contact' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
+                Get Event Updates
+            </a>
+            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

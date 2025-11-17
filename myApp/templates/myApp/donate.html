@@ -1,0 +1,265 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}Give a Love Gift - Donate - iRiseUp Foundation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">GIVE A LOVE GIFT</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                Give a Love Gift
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                Your generosity helps children eat, learn, heal, and hope again.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Form Section -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+            <!-- One-time / Monthly Toggle -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-gray-100 rounded-full p-1 inline-flex">
+                    <button id="one-time-btn" class="px-6 py-2 rounded-full font-semibold bg-gold text-navy transition-all">
+                        One-time
+                    </button>
+                    <button id="monthly-btn" class="px-6 py-2 rounded-full font-semibold text-gray-600 hover:text-navy transition-all">
+                        Monthly
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Preset Amounts -->
+            <div class="mb-8">
+                <p class="text-sm font-semibold text-gray-700 mb-4">Select an amount:</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
+                        <div class="text-2xl font-bold text-navy mb-1">$25</div>
+                        <div class="text-xs text-gray-600">One week of meals</div>
+                    </button>
+                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
+                        <div class="text-2xl font-bold text-navy mb-1">$50</div>
+                        <div class="text-xs text-gray-600">Two weeks of meals</div>
+                    </button>
+                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
+                        <div class="text-2xl font-bold text-navy mb-1">$100</div>
+                        <div class="text-xs text-gray-600">One month of support</div>
+                    </button>
+                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
+                        <div class="text-2xl font-bold text-navy mb-1">$250</div>
+                        <div class="text-xs text-gray-600">Transform a life</div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Custom Amount -->
+            <div class="mb-8">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Or enter a custom amount:</label>
+                <div class="relative">
+                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                    <input type="number" id="custom-amount" placeholder="0.00" class="w-full pl-8 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none text-lg">
+                </div>
+            </div>
+            
+            <!-- Donor Information -->
+            <div class="space-y-6 mb-8">
+                <h3 class="text-xl font-bold text-navy">Your Information</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
+                        <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
+                        <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                    <input type="email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
+                    <input type="tel" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                </div>
+            </div>
+            
+            <!-- Payment Method (Placeholder - integrate with payment processor) -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-navy mb-4">Payment Method</h3>
+                <div class="border-2 border-gray-300 rounded-lg p-6 bg-gray-50">
+                    <p class="text-gray-600 text-center">
+                        <i class="fas fa-credit-card text-3xl text-gray-400 mb-3 block"></i>
+                        Payment processing integration (Stripe, PayPal, etc.) would go here
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <button class="w-full bg-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber transition-all hover-lift">
+                Complete Donation
+            </button>
+            
+            <!-- Trust Markers -->
+            <div class="mt-8 pt-8 border-t border-gray-200 text-center">
+                <p class="text-sm text-gray-600 mb-2">
+                    <i class="fas fa-lock text-gold mr-2"></i>
+                    Secure payment processing
+                </p>
+                <p class="text-sm text-gray-600">
+                    iRiseUp Foundation is a registered 501(c)(3) non-profit organization. 
+                    Your donation is tax-deductible to the extent allowed by law.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Where Your Gift Goes -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <p class="micro-text text-gold mb-4">IMPACT</p>
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
+                Where Your Gift Goes
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Impact 1 -->
+            <div class="bg-off-white rounded-xl p-6 text-center">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Feed. Teach. Love.</h3>
+                <p class="text-gray-600 text-sm">
+                    Providing meals, education, and love to children in need
+                </p>
+            </div>
+            
+            <!-- Impact 2 -->
+            <div class="bg-off-white rounded-xl p-6 text-center">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Leadership & Mentorship</h3>
+                <p class="text-gray-600 text-sm">
+                    Empowering individuals to become leaders in their communities
+                </p>
+            </div>
+            
+            <!-- Impact 3 -->
+            <div class="bg-off-white rounded-xl p-6 text-center">
+                <div class="text-5xl text-gold mb-4">
+                    <i class="fas fa-campground"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Youth Camps</h3>
+                <p class="text-gray-600 text-sm">
+                    Transformative experiences that inspire youth to say "Yes to Life!"
+                </p>
+            </div>
+            
+            <!-- Impact 4 -->
+            <div class="bg-off-white rounded-xl p-6 text-center">
+                <div class="text-5xl text-teal mb-4">
+                    <i class="fas fa-hammer"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Disaster Response</h3>
+                <p class="text-gray-600 text-sm">
+                    Immediate aid and long-term rebuilding efforts in affected communities
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Transparency Section -->
+<section class="py-20 bg-sand">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold heading-font text-navy mb-6">
+            Transparency & Trust
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            We believe in transparency and accountability. Your donations directly support our programs, 
+            and we're committed to using every dollar wisely to maximize impact.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+                <div class="text-4xl text-gold mb-2">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <p class="font-semibold text-navy">Financial Reports</p>
+                <p class="text-sm text-gray-600">Annual reports available upon request</p>
+            </div>
+            <div>
+                <div class="text-4xl text-teal mb-2">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <p class="font-semibold text-navy">501(c)(3) Status</p>
+                <p class="text-sm text-gray-600">Tax-deductible donations</p>
+            </div>
+            <div>
+                <div class="text-4xl text-gold mb-2">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <p class="font-semibold text-navy">Accountability</p>
+                <p class="text-sm text-gray-600">Committed to responsible stewardship</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block extra_js %}
+<script>
+    // Toggle between one-time and monthly
+    const oneTimeBtn = document.getElementById('one-time-btn');
+    const monthlyBtn = document.getElementById('monthly-btn');
+    
+    oneTimeBtn.addEventListener('click', () => {
+        oneTimeBtn.classList.add('bg-gold', 'text-navy');
+        oneTimeBtn.classList.remove('text-gray-600');
+        monthlyBtn.classList.remove('bg-gold', 'text-navy');
+        monthlyBtn.classList.add('text-gray-600');
+    });
+    
+    monthlyBtn.addEventListener('click', () => {
+        monthlyBtn.classList.add('bg-gold', 'text-navy');
+        monthlyBtn.classList.remove('text-gray-600');
+        oneTimeBtn.classList.remove('bg-gold', 'text-navy');
+        oneTimeBtn.classList.add('text-gray-600');
+    });
+    
+    // Donation amount buttons
+    const amountButtons = document.querySelectorAll('.donation-amount');
+    const customAmountInput = document.getElementById('custom-amount');
+    
+    amountButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            amountButtons.forEach(btn => {
+                btn.classList.remove('border-gold', 'bg-gold/10');
+                btn.classList.add('border-gray-300');
+            });
+            button.classList.add('border-gold', 'bg-gold/10');
+            button.classList.remove('border-gray-300');
+            customAmountInput.value = '';
+        });
+    });
+    
+    customAmountInput.addEventListener('input', () => {
+        amountButtons.forEach(btn => {
+            btn.classList.remove('border-gold', 'bg-gold/10');
+            btn.classList.add('border-gray-300');
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}
+
