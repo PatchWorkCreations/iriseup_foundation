@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from myApp import views
 
 urlpatterns = [
@@ -14,3 +16,7 @@ urlpatterns = [
     path('donate/', views.donate, name='donate'),
     path('contact/', views.contact, name='contact'),
 ]
+
+# Serve media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

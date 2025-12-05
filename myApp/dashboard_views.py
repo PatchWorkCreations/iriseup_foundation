@@ -14,6 +14,7 @@ from .models import (
     Contact, ContactInfo, SocialLink, Footer, Event
 )
 from .utils.cloudinary_utils import upload_to_cloudinary, delete_from_cloudinary
+from .utils.local_file_utils import process_local_image, delete_local_image
 
 
 # Authentication Views
@@ -61,7 +62,7 @@ def dashboard_home(request):
 @login_required
 @require_http_methods(["POST"])
 def upload_image(request):
-    """Upload image to Cloudinary"""
+    """Upload image - supports both local file storage and Cloudinary"""
     try:
         if 'image' not in request.FILES:
             return JsonResponse({'error': 'No image file provided'}, status=400)
@@ -69,31 +70,57 @@ def upload_image(request):
         image_file = request.FILES['image']
         folder = request.POST.get('folder', 'iriseup')
         title = request.POST.get('title', '')
+        storage_type = request.POST.get('storage_type', 'local')  # 'local' or 'cloudinary'
         
-        # Upload to Cloudinary
-        upload_result = upload_to_cloudinary(image_file, folder=folder)
-        
-        # Save to database
-        media_asset = MediaAsset.objects.create(
-            title=title or image_file.name,
-            original_url=upload_result['original_url'],
-            web_url=upload_result['web_url'],
-            thumbnail_url=upload_result['thumbnail_url'],
-            cloudinary_public_id=upload_result['public_id'],
-            folder=folder,
-            width=upload_result['width'],
-            height=upload_result['height'],
-            format=upload_result['format'],
-            file_size=upload_result['file_size'],
-        )
-        
-        return JsonResponse({
-            'success': True,
-            'id': media_asset.id,
-            'original_url': media_asset.original_url,
-            'web_url': media_asset.web_url,
-            'thumbnail_url': media_asset.thumbnail_url,
-        })
+        if storage_type == 'cloudinary':
+            # Upload to Cloudinary
+            upload_result = upload_to_cloudinary(image_file, folder=folder)
+            
+            # Save to database
+            media_asset = MediaAsset.objects.create(
+                title=title or image_file.name,
+                original_url=upload_result['original_url'],
+                web_url=upload_result['web_url'],
+                thumbnail_url=upload_result['thumbnail_url'],
+                cloudinary_public_id=upload_result['public_id'],
+                folder=folder,
+                width=upload_result['width'],
+                height=upload_result['height'],
+                format=upload_result['format'],
+                file_size=upload_result['file_size'],
+                storage_type='cloudinary',
+            )
+            
+            return JsonResponse({
+                'success': True,
+                'id': media_asset.id,
+                'original_url': media_asset.original_url,
+                'web_url': media_asset.web_url,
+                'thumbnail_url': media_asset.thumbnail_url,
+            })
+        else:
+            # Local file storage
+            processed = process_local_image(image_file, folder=folder)
+            
+            # Save to database
+            media_asset = MediaAsset.objects.create(
+                title=title or image_file.name,
+                image_file=processed['image_file'],
+                folder=folder,
+                width=processed['width'],
+                height=processed['height'],
+                format=processed['format'],
+                file_size=processed['file_size'],
+                storage_type='local',
+            )
+            
+            return JsonResponse({
+                'success': True,
+                'id': media_asset.id,
+                'original_url': media_asset.get_image_url(),
+                'web_url': media_asset.get_image_url(),
+                'thumbnail_url': media_asset.get_thumbnail_url(),
+            })
         
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
@@ -123,13 +150,17 @@ def gallery(request):
 @login_required
 @require_http_methods(["POST"])
 def delete_image(request, image_id):
-    """Delete image from Cloudinary and database"""
+    """Delete image from storage (Cloudinary or local) and database"""
     try:
         media_asset = get_object_or_404(MediaAsset, id=image_id)
         
-        # Delete from Cloudinary
-        if media_asset.cloudinary_public_id:
+        # Delete from storage based on type
+        if media_asset.storage_type == 'cloudinary' and media_asset.cloudinary_public_id:
             delete_from_cloudinary(media_asset.cloudinary_public_id)
+        elif media_asset.storage_type == 'local' and media_asset.image_file:
+            # Delete local file
+            if media_asset.image_file:
+                media_asset.image_file.delete(save=False)
         
         # Delete from database
         media_asset.delete()

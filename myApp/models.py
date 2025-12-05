@@ -12,12 +12,16 @@ except ImportError:
 
 
 class MediaAsset(models.Model):
-    """Cloudinary image assets - stores only URLs, no file storage"""
+    """Image assets - supports both Cloudinary URLs and local file storage"""
     title = models.CharField(max_length=200, blank=True)
-    original_url = models.URLField(max_length=500)
+    # Cloudinary fields (for remote storage)
+    original_url = models.URLField(max_length=500, blank=True)
     web_url = models.URLField(max_length=500, blank=True)
     thumbnail_url = models.URLField(max_length=500, blank=True)
     cloudinary_public_id = models.CharField(max_length=200, blank=True)
+    # Local file storage
+    image_file = models.ImageField(upload_to='uploads/%Y/%m/%d/', blank=True, null=True)
+    storage_type = models.CharField(max_length=20, choices=[('cloudinary', 'Cloudinary'), ('local', 'Local')], default='local')
     folder = models.CharField(max_length=200, default='iriseup')
     width = models.IntegerField(null=True, blank=True)
     height = models.IntegerField(null=True, blank=True)
@@ -31,6 +35,18 @@ class MediaAsset(models.Model):
 
     def __str__(self):
         return self.title or f"Image {self.id}"
+    
+    def get_image_url(self):
+        """Get the appropriate image URL based on storage type"""
+        if self.storage_type == 'local' and self.image_file:
+            return self.image_file.url
+        return self.original_url or ''
+    
+    def get_thumbnail_url(self):
+        """Get thumbnail URL - for local files, returns the same as image_url"""
+        if self.storage_type == 'local' and self.image_file:
+            return self.image_file.url
+        return self.thumbnail_url or self.original_url or ''
 
 
 class SEO(models.Model):
