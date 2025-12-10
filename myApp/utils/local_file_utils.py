@@ -144,3 +144,5 @@ def delete_local_image(image_path):
     except Exception as e:
         raise Exception(f"Error deleting local image: {str(e)}")
 
+
+

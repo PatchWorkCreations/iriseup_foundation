@@ -23,3 +23,9 @@ def donate(request):
 
 def contact(request):
     return render(request, 'myApp/contact.html')
+
+def faqs(request):
+    return render(request, 'myApp/faqs.html')
+
+def privacy(request):
+    return render(request, 'myApp/privacy.html')

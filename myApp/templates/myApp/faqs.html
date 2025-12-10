@@ -1,0 +1,435 @@
+{% extends 'myApp/base.html' %}
+
+{% block title %}Frequently Asked Questions - iRiseUp Foundation{% endblock %}
+
+{% block content %}
+<style>
+    /* Flip Card Styles */
+    .flip-card {
+        perspective: 1000px;
+        margin-bottom: 1.5rem;
+        overflow: visible;
+    }
+    
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        overflow: visible;
+    }
+    
+    .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+        width: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        overflow: visible;
+        word-wrap: break-word;
+    }
+    
+    .flip-card-front {
+        position: relative;
+        background: white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .flip-card-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+        color: #1a2332;
+        transform: rotateY(180deg);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        overflow: visible;
+    }
+    
+    .flip-card-front h2 {
+        color: #1a2332;
+        margin-bottom: 0.75rem;
+        margin-top: 0;
+    }
+    
+    .flip-card-back h2 {
+        color: #1a2332;
+        margin-bottom: 0.75rem;
+        margin-top: 0;
+    }
+    
+    .flip-card-front p,
+    .flip-card-back p {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .flip-card-front p:last-child,
+    .flip-card-back p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .flip-card-front ul,
+    .flip-card-back ul {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .flip-card-front ul:last-child,
+    .flip-card-back ul:last-child {
+        margin-bottom: 0;
+    }
+    
+    .flip-card-front li,
+    .flip-card-back li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .flip-card-front li:last-child,
+    .flip-card-back li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .flip-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: #d4af37;
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+    }
+    
+    .flip-card.flipped .flip-icon {
+        transform: rotateY(180deg);
+        color: #1a2332;
+    }
+    
+    .flip-card-back .flip-icon {
+        color: #1a2332;
+    }
+    
+    .flip-card:hover .flip-card-inner {
+        transform: translateY(-5px);
+    }
+    
+    .flip-card.flipped:hover .flip-card-inner {
+        transform: rotateY(180deg) translateY(-5px);
+    }
+    
+    @media (max-width: 768px) {
+        .flip-card-front,
+        .flip-card-back {
+            padding: 1.25rem;
+        }
+        
+        .flip-card {
+            margin-bottom: 1.25rem;
+        }
+    }
+</style>
+<script>
+    // Match heights - use the taller of front or back
+    function updateFlipCardHeights() {
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach(function(card) {
+            const front = card.querySelector('.flip-card-front');
+            const back = card.querySelector('.flip-card-back');
+            const inner = card.querySelector('.flip-card-inner');
+            
+            if (front && back && inner) {
+                // Reset to auto to measure natural heights
+                inner.style.height = 'auto';
+                back.style.height = 'auto';
+                
+                // Force reflow
+                void card.offsetHeight;
+                
+                // Get scrollHeight which includes all content including overflow
+                const frontHeight = front.scrollHeight;
+                
+                // Temporarily change back to measure it properly
+                const originalTransform = back.style.transform;
+                const originalPosition = back.style.position;
+                const originalVisibility = back.style.visibility;
+                
+                // Make back measurable
+                back.style.position = 'relative';
+                back.style.transform = 'none';
+                back.style.visibility = 'visible';
+                back.style.opacity = '1';
+                
+                // Force reflow and measure
+                void back.offsetHeight;
+                const backHeight = back.scrollHeight;
+                
+                // Restore original styles
+                back.style.position = originalPosition || 'absolute';
+                back.style.transform = originalTransform || 'rotateY(180deg)';
+                back.style.visibility = originalVisibility || '';
+                back.style.opacity = '';
+                
+                // Use the maximum height to prevent cutting
+                const maxHeight = Math.max(frontHeight, backHeight);
+                
+                // Set heights
+                inner.style.height = maxHeight + 'px';
+                back.style.height = maxHeight + 'px';
+                back.style.minHeight = maxHeight + 'px';
+            }
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initial calculation after a small delay to ensure layout is ready
+        setTimeout(updateFlipCardHeights, 100);
+        
+        // Recalculate on window resize
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updateFlipCardHeights, 100);
+        });
+        
+        // Recalculate when cards are flipped
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach(function(card) {
+            card.addEventListener('click', function() {
+                setTimeout(updateFlipCardHeights, 400); // After flip animation
+            });
+        });
+        
+        // Also recalculate after full page load
+        window.addEventListener('load', function() {
+            setTimeout(updateFlipCardHeights, 100);
+        });
+    });
+</script>
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="micro-text text-gold mb-4">FAQ</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+                Frequently Asked Questions
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                Find answers to common questions about iRiseUp Foundation, our programs, and how you can get involved.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQs Section -->
+<section class="py-20 bg-off-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div>
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">What is iRiseUp Foundation?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">What is iRiseUp Foundation?</h2>
+                        <p class="text-lg leading-relaxed">
+                            iRiseUp Foundation is a registered 501(c)(3) non-profit organization dedicated to creating 
+                            spaces where individuals and communities can find hope, healing, and empowerment. We support 
+                            programs focused on mentorship, education, leadership development, mental health, disaster 
+                            relief, and youth empowerment across the United States and the Philippines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">How can I donate?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">How can I donate?</h2>
+                        <p class="text-lg leading-relaxed">
+                            You can donate through our website by clicking the "Give a Love Gift" button in the navigation 
+                            or visiting our <a href="{% url 'donate' %}" class="text-navy hover:underline font-semibold">Donate page</a>. 
+                            All donations are tax-deductible to the extent allowed by law.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            We accept various payment methods and one-time or recurring donations. Your contributions 
+                            directly support our programs and help us continue our mission of empowering communities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">How can I volunteer?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">How can I volunteer?</h2>
+                        <p class="text-lg leading-relaxed">
+                            We welcome volunteers! You can get involved in various ways:
+                        </p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed ml-4">
+                            <li>Mentoring programs</li>
+                            <li>Educational workshops and events</li>
+                            <li>Community outreach activities</li>
+                            <li>Administrative support</li>
+                            <li>Event planning and coordination</li>
+                        </ul>
+                        <p class="text-lg leading-relaxed">
+                            To learn more about volunteer opportunities, please <a href="{% url 'contact' %}" class="text-navy hover:underline font-semibold">contact us</a> 
+                            and let us know how you'd like to help.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">Where do you operate?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">Where do you operate?</h2>
+                        <p class="text-lg leading-relaxed">
+                            iRiseUp Foundation operates programs in the United States and the Philippines. Our main 
+                            office is located in Columbus, OH, but we serve communities across both countries through 
+                            various programs and initiatives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">What programs do you offer?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">What programs do you offer?</h2>
+                        <p class="text-lg leading-relaxed">
+                            We support multiple programs including:
+                        </p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed ml-4">
+                            <li>Educational support and scholarships</li>
+                            <li>Leadership development programs</li>
+                            <li>Mental health and wellness initiatives</li>
+                            <li>Disaster relief and community support</li>
+                            <li>Youth empowerment and mentoring</li>
+                        </ul>
+                        <p class="text-lg leading-relaxed">
+                            Visit our <a href="{% url 'what_we_do' %}" class="text-navy hover:underline font-semibold">What We Do</a> 
+                            page to learn more about each program.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">Are donations tax-deductible?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">Are donations tax-deductible?</h2>
+                        <p class="text-lg leading-relaxed">
+                            Yes! iRiseUp Foundation is a registered 501(c)(3) non-profit organization, so all donations 
+                            are tax-deductible to the extent allowed by law. You will receive a receipt for your donation 
+                            that you can use for tax purposes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">How can I stay updated on events and news?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">How can I stay updated on events and news?</h2>
+                        <p class="text-lg leading-relaxed">
+                            You can stay connected with us through:
+                        </p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed ml-4">
+                            <li>Visiting our <a href="{% url 'events' %}" class="text-navy hover:underline font-semibold">Events page</a> for upcoming activities</li>
+                            <li>Following us on social media (links in our footer)</li>
+                            <li>Subscribing to our newsletter by <a href="{% url 'contact' %}" class="text-navy hover:underline font-semibold">contacting us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">Can I partner with iRiseUp Foundation?</h2>
+                        <p class="text-gray-600">Click to flip and learn more</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <i class="fas fa-sync-alt flip-icon"></i>
+                        <h2 class="text-2xl font-bold heading-font">Can I partner with iRiseUp Foundation?</h2>
+                        <p class="text-lg leading-relaxed">
+                            We're always open to partnerships with organizations, businesses, and individuals who share 
+                            our vision. Whether you're interested in corporate sponsorship, program collaboration, or 
+                            other partnership opportunities, please <a href="{% url 'contact' %}" class="text-navy hover:underline font-semibold">reach out to us</a> 
+                            to discuss how we can work together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Still Have Questions Section -->
+        <div class="mt-16 bg-gradient-to-br from-gold to-amber rounded-xl shadow-lg p-8 text-center">
+            <h2 class="text-3xl font-bold heading-font text-navy mb-4">Still Have Questions?</h2>
+            <p class="text-lg text-navy mb-6">
+                We're here to help! Get in touch with us and we'll be happy to answer any questions you may have.
+            </p>
+            <a href="{% url 'contact' %}" class="inline-block bg-navy text-white px-8 py-4 rounded-full font-semibold hover:bg-charcoal transition-all hover-lift">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -15,6 +15,8 @@ urlpatterns = [
     path('mission-accomplished/', views.mission_accomplished, name='mission_accomplished'),
     path('donate/', views.donate, name='donate'),
     path('contact/', views.contact, name='contact'),
+    path('faqs/', views.faqs, name='faqs'),
+    path('privacy/', views.privacy, name='privacy'),
 ]
 
 # Serve media files in development

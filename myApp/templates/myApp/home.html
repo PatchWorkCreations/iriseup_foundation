@@ -4,18 +4,18 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-navy via-charcoal to-navy min-h-screen flex items-center overflow-hidden">
+<section class="relative bg-gradient-to-br from-navy via-charcoal to-navy min-h-screen flex items-center overflow-hidden -mt-20 pt-20">
     <!-- Subtle pattern overlay -->
     <div class="absolute inset-0 opacity-5">
         <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 pt-32">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Left: Content -->
             <div class="text-white fade-in">
                 <p class="micro-text text-gold mb-4">NON-PROFIT FOUNDATION · GLOBAL COMMUNITY</p>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold heading-font mb-6 leading-tight">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold heading-font mb-6 leading-tight glow-text">
                     Helping hearts rise, communities heal, and young lives thrive.
                 </h1>
                 <p class="text-xl text-gray-300 mb-8 leading-relaxed">
@@ -43,43 +43,137 @@
 </section>
 
 <!-- At a Glance - Impact Stats -->
-<section class="py-16 bg-sand">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 bg-gradient-to-br from-charcoal via-navy to-charcoal relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-teal rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gold rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Stat Card 1 -->
-            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
-                <div class="text-4xl text-gold mb-4">
-                    <i class="fas fa-child"></i>
+            <div class="group backdrop-blur-xl bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-teal/30 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-teal/20">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-amber/20 border border-gold/30 backdrop-blur-sm flex items-center justify-center">
+                            <i class="fas fa-child text-2xl text-gold"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-xs uppercase tracking-wide">Children Reached</p>
+                            <p class="text-3xl font-bold text-white">500+</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-4xl font-bold text-navy mb-2">500+</div>
-                <p class="text-gray-600">Children reached through Feed. Teach. Love.</p>
+                <!-- Mini Line Chart -->
+                <div class="mt-4 h-16 relative">
+                    <svg class="w-full h-full" viewBox="0 0 100 40" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 0,35 Q 15,25 25,20 T 50,15 T 75,10 T 100,5" 
+                              fill="none" 
+                              stroke="#d4af37" 
+                              stroke-width="2" 
+                              class="transition-all duration-300"/>
+                        <path d="M 0,35 Q 15,25 25,20 T 50,15 T 75,10 T 100,5 L 100,40 L 0,40 Z" 
+                              fill="url(#gradient1)" 
+                              class="transition-all duration-300"/>
+                    </svg>
+                </div>
+                <p class="text-gray-300 text-xs mt-3 leading-relaxed">Feed. Teach. Love. program impact</p>
             </div>
             
             <!-- Stat Card 2 -->
-            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
-                <div class="text-4xl text-teal mb-4">
-                    <i class="fas fa-campground"></i>
+            <div class="group backdrop-blur-xl bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-teal/30 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-teal/20">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal/20 to-turquoise/20 border border-teal/30 backdrop-blur-sm flex items-center justify-center">
+                            <i class="fas fa-campground text-2xl text-teal"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-xs uppercase tracking-wide">Youth Empowered</p>
+                            <p class="text-3xl font-bold text-white">200+</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-4xl font-bold text-navy mb-2">200+</div>
-                <p class="text-gray-600">Youth empowered through camps</p>
+                <!-- Mini Line Chart -->
+                <div class="mt-4 h-16 relative">
+                    <svg class="w-full h-full" viewBox="0 0 100 40" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 0,30 Q 20,25 30,18 T 50,12 T 70,8 T 100,5" 
+                              fill="none" 
+                              stroke="#14b8a6" 
+                              stroke-width="2" 
+                              class="transition-all duration-300"/>
+                        <path d="M 0,30 Q 20,25 30,18 T 50,12 T 70,8 T 100,5 L 100,40 L 0,40 Z" 
+                              fill="url(#gradient2)" 
+                              class="transition-all duration-300"/>
+                    </svg>
+                </div>
+                <p class="text-gray-300 text-xs mt-3 leading-relaxed">Through camps and mentorship</p>
             </div>
             
             <!-- Stat Card 3 -->
-            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
-                <div class="text-4xl text-gold mb-4">
-                    <i class="fas fa-globe-americas"></i>
+            <div class="group backdrop-blur-xl bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-teal/30 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-teal/20">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-amber/20 border border-gold/30 backdrop-blur-sm flex items-center justify-center">
+                            <i class="fas fa-globe-americas text-2xl text-gold"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-xs uppercase tracking-wide">Communities</p>
+                            <p class="text-3xl font-bold text-white">15+</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-4xl font-bold text-navy mb-2">15+</div>
-                <p class="text-gray-600">Communities served in Philippines & US</p>
+                <!-- Mini Bar Chart -->
+                <div class="mt-4 h-16 flex items-end gap-2">
+                    <div class="flex-1 bg-teal/20 rounded-t" style="height: 40%"></div>
+                    <div class="flex-1 bg-teal/30 rounded-t" style="height: 55%"></div>
+                    <div class="flex-1 bg-teal/40 rounded-t" style="height: 70%"></div>
+                    <div class="flex-1 bg-teal/50 rounded-t" style="height: 85%"></div>
+                    <div class="flex-1 bg-teal rounded-t" style="height: 100%"></div>
+                </div>
+                <p class="text-gray-300 text-xs mt-3 leading-relaxed">Served in Philippines & US</p>
             </div>
             
             <!-- Stat Card 4 -->
-            <div class="bg-white rounded-xl p-6 shadow-md hover-lift text-center">
-                <div class="text-4xl text-teal mb-4">
-                    <i class="fas fa-calendar-alt"></i>
+            <div class="group backdrop-blur-xl bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-teal/30 transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-teal/20">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal/20 to-turquoise/20 border border-teal/30 backdrop-blur-sm flex items-center justify-center">
+                            <i class="fas fa-calendar-alt text-2xl text-teal"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-xs uppercase tracking-wide">Founded</p>
+                            <p class="text-3xl font-bold text-white">2021</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-4xl font-bold text-navy mb-2">2021</div>
-                <p class="text-gray-600">Year of founding</p>
+                <!-- Progress Timeline -->
+                <div class="mt-4 h-16 relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full h-1 bg-white/10 rounded-full">
+                            <div class="h-full bg-gradient-to-r from-teal to-turquoise rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 left-0 w-full h-full flex justify-between items-end">
+                        <div class="w-2 h-2 bg-teal rounded-full"></div>
+                        <div class="w-2 h-2 bg-teal/60 rounded-full"></div>
+                        <div class="w-2 h-2 bg-teal/40 rounded-full"></div>
+                        <div class="w-2 h-2 bg-teal/20 rounded-full"></div>
+                    </div>
+                </div>
+                <p class="text-gray-300 text-xs mt-3 leading-relaxed">Years of impact and growth</p>
             </div>
         </div>
     </div>
@@ -279,7 +373,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="max-w-3xl mx-auto text-center">
             <p class="micro-text text-gold mb-4">UPCOMING RETREAT</p>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6 glow-text relative">
                 A Heart of Remembrance
             </h2>
             <p class="text-xl text-gray-300 mb-6">
@@ -382,8 +476,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Impact Story 1 -->
             <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/Click.avif" alt="CLICK" class="w-full h-full object-cover">
+                <div class="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                    <img src="/media/uploads/2025/12/05/Click.avif" alt="CLICK" class="w-full h-full object-contain p-4">
                 </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-navy mb-3">CLICK</h3>
@@ -441,7 +535,7 @@
 <section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6 glow-text relative">
                 Rise with us.
             </h2>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">

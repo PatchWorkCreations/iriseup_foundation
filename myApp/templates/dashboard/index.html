@@ -58,28 +58,43 @@
     </div>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-xl font-bold text-navy mb-4">Quick Actions</h2>
-        <div class="space-y-2">
-            <a href="{% url 'dashboard:hero_edit' 'home' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
-                <i class="fas fa-edit mr-2"></i> Edit Hero Section
-            </a>
-            <a href="{% url 'dashboard:gallery' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
-                <i class="fas fa-images mr-2"></i> Manage Gallery
-            </a>
-            <a href="{% url 'dashboard:programs_list' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
-                <i class="fas fa-list mr-2"></i> Manage Programs
-            </a>
-            <a href="{% url 'dashboard:seo_edit' 'home' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
-                <i class="fas fa-search mr-2"></i> Edit SEO
+<div class="bg-white rounded-lg shadow p-6 mb-8">
+    <h2 class="text-xl font-bold text-navy mb-4">Quick Actions</h2>
+    <div class="space-y-2">
+        <a href="{% url 'dashboard:hero_edit' 'home' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
+            <i class="fas fa-edit mr-2"></i> Edit Hero Section
+        </a>
+        <a href="{% url 'dashboard:gallery' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
+            <i class="fas fa-images mr-2"></i> Manage Gallery
+        </a>
+        <a href="{% url 'dashboard:programs_list' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
+            <i class="fas fa-list mr-2"></i> Manage Programs
+        </a>
+        <a href="{% url 'dashboard:seo_edit' 'home' %}" class="block py-2 px-4 bg-gray-100 rounded hover:bg-gray-200">
+            <i class="fas fa-search mr-2"></i> Edit SEO
+        </a>
+    </div>
+</div>
+
+<!-- Impact Statistics - Cards directly on beige background -->
+<div class="bg-beige -mx-8 px-8 py-16 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for stat in impact_stats %}
+        <div class="bg-white rounded-xl p-8 shadow-lg text-center">
+            <div class="text-5xl {% cycle 'text-gold' 'text-teal' 'text-gold' 'text-teal' %} mb-6">
+                <i class="{{ stat.icon|default:'fas fa-chart-line' }}"></i>
+            </div>
+            <div class="text-5xl font-bold text-navy mb-3">{{ stat.number }}</div>
+            <p class="text-gray-600 text-base leading-relaxed">{{ stat.label }}</p>
+        </div>
+        {% empty %}
+        <div class="col-span-4 text-center py-12">
+            <p class="text-gray-600 mb-4 text-lg">No impact statistics available.</p>
+            <a href="{% url 'dashboard:stat_edit' %}" class="inline-block bg-teal text-white px-6 py-3 rounded-lg hover:bg-teal-600 font-semibold transition-colors">
+                <i class="fas fa-plus mr-2"></i> Add Statistics
             </a>
         </div>
-    </div>
-    
-    <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-xl font-bold text-navy mb-4">Recent Activity</h2>
-        <p class="text-gray-600">Activity log will appear here</p>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

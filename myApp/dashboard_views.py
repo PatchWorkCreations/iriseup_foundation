@@ -55,7 +55,12 @@ def dashboard_home(request):
         'total_testimonials': Testimonial.objects.filter(is_active=True).count(),
         'total_events': Event.objects.filter(is_active=True).count(),
     }
-    return render(request, 'dashboard/index.html', {'stats': stats})
+    # Get impact statistics for display
+    impact_stats = Stat.objects.filter(is_active=True).order_by('sort_order')[:4]
+    return render(request, 'dashboard/index.html', {
+        'stats': stats,
+        'impact_stats': impact_stats
+    })
 
 
 # Image Upload and Gallery
