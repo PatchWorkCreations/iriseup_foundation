@@ -4,14 +4,25 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">OUR STORY</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                We are ambassadors for belonging.
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    OUR STORY
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">We are ambassadors for belonging.</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 A non-profit community supporting programs focused on mentorship, education, and empowerment.
             </p>
         </div>
@@ -19,85 +30,138 @@
 </section>
 
 <!-- Story Section -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Left: Text Content -->
-            <div class="prose prose-lg max-w-none">
-                <h2 class="text-3xl font-bold heading-font text-navy mb-6">Why We Started</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    iRiseUp Foundation was born from a simple belief: everyone deserves to belong, to thrive, 
-                    and to rise above their circumstances. Founded in 2021, we began with a vision to create 
-                    spaces where individuals and communities could find hope, healing, and empowerment.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    What started as a small community initiative has grown into a global movement, touching 
-                    lives in the United States and the Philippines. We've learned that transformation happens 
-                    when people feel seen, valued, and supported.
-                </p>
+            <div class="prose prose-lg max-w-none space-y-8 fade-in">
+                <div class="scroll-fade">
+                    <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-6 relative inline-block scroll-fade delay-100">
+                        <span class="relative z-10">Why We Started</span>
+                        <span class="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-60"></span>
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 scroll-fade delay-200">
+                        iRiseUp Foundation was born from a simple belief: everyone deserves to belong, to thrive, 
+                        and to rise above their circumstances. Founded in 2021, we began with a vision to create 
+                        spaces where individuals and communities could find hope, healing, and empowerment.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed scroll-fade delay-300">
+                        What started as a small community initiative has grown into a global movement, touching 
+                        lives in the United States and the Philippines. We've learned that transformation happens 
+                        when people feel seen, valued, and supported.
+                    </p>
+                </div>
                 
-                <h2 class="text-3xl font-bold heading-font text-navy mb-6 mt-12">Where We Are Now</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Today, iRiseUp Foundation supports multiple programs across education, leadership development, 
-                    mental health, disaster relief, and youth empowerment. We've reached hundreds of children, 
-                    empowered countless youth, and served communities on two continents.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    But numbers only tell part of the story. The real impact is in the transformed lives, 
-                    the restored hope, and the communities that have learned to rise together.
-                </p>
+                <div class="scroll-fade delay-200">
+                    <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-6 relative inline-block scroll-fade delay-100">
+                        <span class="relative z-10">Where We Are Now</span>
+                        <span class="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-60"></span>
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 scroll-fade delay-200">
+                        Today, iRiseUp Foundation supports multiple programs across education, leadership development, 
+                        mental health, disaster relief, and youth empowerment. We've reached hundreds of children, 
+                        empowered countless youth, and served communities on two continents.
+                    </p>
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed scroll-fade delay-300">
+                        But numbers only tell part of the story. The real impact is in the transformed lives, 
+                        the restored hope, and the communities that have learned to rise together.
+                    </p>
+                </div>
             </div>
             
             <!-- Right: Image -->
-            <div class="relative">
-                <div class="rounded-2xl overflow-hidden shadow-xl">
-                    <img src="/media/uploads/2025/12/05/02.webp" alt="About Us" class="w-full h-full object-cover aspect-[4/3]">
+            <div class="relative group fade-in" style="animation-delay: 0.2s;">
+                <!-- Decorative gradient overlay -->
+                <div class="absolute -inset-4 bg-gradient-to-br from-gold/20 via-teal/20 to-gold/10 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500 -z-10"></div>
+                
+                <!-- Image container with modern effects -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)]">
+                    <!-- Gradient overlay on image -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/10 via-transparent to-transparent z-10 pointer-events-none"></div>
+                    
+                    <!-- Image with smooth zoom effect -->
+                    <img src="/media/uploads/2025/12/05/02.webp" alt="About Us" 
+                         class="w-full h-full object-cover aspect-[4/3] transform transition-transform duration-700 group-hover:scale-110">
+                    
+                    <!-- Shine effect on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-20 pointer-events-none"></div>
                 </div>
+                
+                <!-- Floating accent dots -->
+                <div class="absolute -top-4 -right-4 w-3 h-3 bg-gold rounded-full opacity-60 animate-pulse"></div>
+                <div class="absolute -bottom-4 -left-4 w-2 h-2 bg-teal rounded-full opacity-60 animate-pulse" style="animation-delay: 0.5s;"></div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Values Preview -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <p class="micro-text text-gold mb-4">OUR VALUES</p>
-            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
-                Core Beliefs
+<section class="py-24 bg-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-in">
+            <div class="inline-block mb-4">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full"></span>
+                    OUR VALUES
+                </p>
+            </div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font text-navy mb-6 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Core Beliefs</span>
+                <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
             </h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto scroll-fade delay-200">
                 The principles that guide everything we do
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div class="text-center">
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-heart"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-12">
+            <div class="text-center p-8 rounded-2xl bg-off-white/50 hover:bg-off-white transition-all duration-300 group fade-in" style="animation-delay: 0.1s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-2">Compassion</h3>
-                <p class="text-gray-600">Meeting people where they are with love and understanding</p>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Compassion</h3>
+                <p class="text-gray-600 leading-relaxed">Meeting people where they are with love and understanding</p>
             </div>
-            <div class="text-center">
-                <div class="text-5xl text-teal mb-4">
-                    <i class="fas fa-users"></i>
+            <div class="text-center p-8 rounded-2xl bg-off-white/50 hover:bg-off-white transition-all duration-300 group fade-in" style="animation-delay: 0.2s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-teal mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-teal/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-2">Belonging</h3>
-                <p class="text-gray-600">Creating spaces where everyone feels valued and included</p>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-teal transition-colors duration-300">Belonging</h3>
+                <p class="text-gray-600 leading-relaxed">Creating spaces where everyone feels valued and included</p>
             </div>
-            <div class="text-center">
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-hand-holding-heart"></i>
+            <div class="text-center p-8 rounded-2xl bg-off-white/50 hover:bg-off-white transition-all duration-300 group fade-in" style="animation-delay: 0.3s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-2">Service</h3>
-                <p class="text-gray-600">Walking alongside others in their journey toward wholeness</p>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Service</h3>
+                <p class="text-gray-600 leading-relaxed">Walking alongside others in their journey toward wholeness</p>
             </div>
         </div>
         
-        <div class="text-center">
-            <a href="{% url 'core_beliefs' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift inline-block">
-                Explore Our Core Beliefs
+        <div class="text-center fade-in" style="animation-delay: 0.4s;">
+            <a href="{% url 'core_beliefs' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift inline-block relative overflow-hidden group/btn">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    Explore Our Core Beliefs
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-2 transition-transform duration-300"></i>
+                </span>
             </a>
         </div>
     </div>
@@ -156,64 +220,80 @@
 {% endcomment %}
 
 <!-- Global Footprint -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <p class="micro-text text-gold mb-4">GLOBAL REACH</p>
-            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
-                Our Global Footprint
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16 fade-in">
+            <div class="inline-block mb-4">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full"></span>
+                    GLOBAL REACH
+                </p>
+            </div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font text-navy mb-6 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Our Global Footprint</span>
+                <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
             </h2>
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- US Section -->
-            <div class="bg-off-white rounded-xl p-8">
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-flag-usa"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in" style="animation-delay: 0.1s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-flag-usa"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-navy mb-4">United States</h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
-                        <span>Inner-city education programs (CLICK)</span>
+                <h3 class="text-2xl font-bold text-navy mb-6 group-hover:text-gold transition-colors duration-300">United States</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Inner-city education programs (CLICK)</span>
                     </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
-                        <span>Youth camps and mentorship</span>
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Youth camps and mentorship</span>
                     </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
-                        <span>Mental health and wellness support</span>
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Mental health and wellness support</span>
                     </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal mr-3 mt-1"></i>
-                        <span>Leadership development programs</span>
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-teal mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Leadership development programs</span>
                     </li>
                 </ul>
             </div>
             
             <!-- Philippines Section -->
-            <div class="bg-off-white rounded-xl p-8">
-                <div class="text-5xl text-teal mb-4">
-                    <i class="fas fa-globe-asia"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in" style="animation-delay: 0.2s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-teal mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-teal/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-navy mb-4">Philippines</h3>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
-                        <span>Feed. Teach. Love. programs</span>
+                <h3 class="text-2xl font-bold text-navy mb-6 group-hover:text-teal transition-colors duration-300">Philippines</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Feed. Teach. Love. programs</span>
                     </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
-                        <span>Disaster relief and rebuilding</span>
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Disaster relief and rebuilding</span>
                     </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
-                        <span>Coastal community support</span>
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Coastal community support</span>
                     </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-gold mr-3 mt-1"></i>
-                        <span>Education and skills training</span>
+                    <li class="flex items-start group/item">
+                        <i class="fas fa-check-circle text-gold mr-3 mt-1 transform group-hover/item:scale-125 transition-transform duration-300"></i>
+                        <span class="group-hover/item:text-navy transition-colors duration-300">Education and skills training</span>
                     </li>
                 </ul>
             </div>
@@ -222,24 +302,58 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
-            Join Our Journey
+<section class="py-24 bg-gradient-to-br from-navy via-charcoal to-navy text-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+            <span class="relative z-10">Join Our Journey</span>
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
         </h2>
-        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed scroll-fade delay-200">
             Be part of a movement that's transforming lives and communities. 
             Whether you volunteer, donate, or partner with us, your involvement matters.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
-                Donate
+            <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-heart"></i>
+                    Donate
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </a>
-            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
-                Volunteer
+            <a href="{% url 'contact' %}" class="group/btn border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all relative overflow-hidden">
+                <span class="absolute inset-0 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-hands-helping"></i>
+                    Volunteer
+                </span>
             </a>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
 {% endblock %}
 

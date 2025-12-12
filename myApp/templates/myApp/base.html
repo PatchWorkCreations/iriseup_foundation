@@ -295,9 +295,91 @@
         .header-glow.show-border::before {
             opacity: 1;
         }
+        /* Loading page styles */
+        #loading-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a2332 0%, #2c3e50 50%, #1a2332 100%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-out;
+        }
+        
+        #loading-page.slide-up {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        
+        .loading-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .loading-up {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(212, 175, 55, 0.9);
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .loading-text {
+            color: rgba(156, 163, 175, 0.7);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        /* Scroll fade animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-fade.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-fade.fade-out {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        
+        /* Delay classes for staggered animations */
+        .scroll-fade.delay-100 {
+            transition-delay: 0.1s;
+        }
+        
+        .scroll-fade.delay-200 {
+            transition-delay: 0.2s;
+        }
+        
+        .scroll-fade.delay-300 {
+            transition-delay: 0.3s;
+        }
     </style>
 </head>
 <body class="smooth-scroll bg-gradient-to-b from-navy via-navy to-charcoal">
+    <!-- Loading Page -->
+    <div id="loading-page">
+        <div class="loading-logo">iRiseUp Foundation</div>
+        <div class="loading-up">Up</div>
+        <div class="loading-text">Loading</div>
+    </div>
+    
     <!-- Navigation -->
     <nav class="sticky top-0 w-full z-50 header-glow" id="navbar" style="background-color: transparent; backdrop-filter: none; transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
         <div class="w-full">
@@ -613,6 +695,88 @@
                 }
             });
         });
+        
+        // Loading page - slide up when page is fully loaded
+        window.addEventListener('load', function() {
+            const loadingPage = document.getElementById('loading-page');
+            if (loadingPage) {
+                // Add slide-up class
+                loadingPage.classList.add('slide-up');
+                // Remove from DOM after animation completes
+                setTimeout(function() {
+                    loadingPage.style.display = 'none';
+                }, 800);
+            }
+        });
+        
+        // Fallback: hide loading page if load event doesn't fire
+        setTimeout(function() {
+            const loadingPage = document.getElementById('loading-page');
+            if (loadingPage && !loadingPage.classList.contains('slide-up')) {
+                loadingPage.classList.add('slide-up');
+                setTimeout(function() {
+                    loadingPage.style.display = 'none';
+                }, 800);
+            }
+        }, 3000);
+        
+        // Scroll fade in/out animations
+        function initScrollFade() {
+            const fadeElements = document.querySelectorAll('.scroll-fade');
+            let ticking = false;
+            let lastScrollY = window.scrollY;
+            
+            function updateScrollFade() {
+                const windowHeight = window.innerHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+                const scrollingDown = scrollY > lastScrollY;
+                lastScrollY = scrollY;
+                
+                fadeElements.forEach(function(element) {
+                    const rect = element.getBoundingClientRect();
+                    const elementTop = rect.top;
+                    const elementBottom = rect.bottom;
+                    const elementCenter = elementTop + (elementBottom - elementTop) / 2;
+                    
+                    // Trigger zone: middle 60% of viewport (20% to 80%)
+                    const triggerTop = windowHeight * 0.2;
+                    const triggerBottom = windowHeight * 0.8;
+                    
+                    // Check if element center is in trigger zone
+                    const isInView = elementCenter >= triggerTop && elementCenter <= triggerBottom;
+                    
+                    if (isInView) {
+                        // Element is in view - fade in
+                        element.classList.remove('fade-out');
+                        element.classList.add('fade-in');
+                    } else {
+                        // Element is out of view - fade out
+                        element.classList.remove('fade-in');
+                        element.classList.add('fade-out');
+                    }
+                });
+                
+                ticking = false;
+            }
+            
+            // Initial check
+            updateScrollFade();
+            
+            // Throttled scroll handler
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateScrollFade);
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+        
+        // Initialize scroll fade when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollFade);
+        } else {
+            initScrollFade();
+        }
     </script>
     
     {% block extra_js %}

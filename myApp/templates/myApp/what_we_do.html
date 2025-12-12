@@ -4,14 +4,25 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">OUR PROGRAMS</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                What We Do
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    OUR PROGRAMS
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">What We Do</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 We don't just run programs. We walk with people.
             </p>
         </div>
@@ -19,18 +30,35 @@
 </section>
 
 <!-- Programs Grid -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             <!-- Program 1 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership Development" class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.1s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <!-- Decorative corner accent -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="mb-6 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership Development" 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-user-graduate"></i>
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Leadership Development</h2>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Leadership Development</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Empowering individuals to become leaders in their communities through mentorship, 
                     training, and personal development programs. We believe everyone has leadership 
@@ -55,21 +83,39 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                        Support This Program
+                    <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-heart"></i>
+                            Support This Program
+                        </span>
                     </a>
-                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                        Volunteer
+                    <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </span>
                     </a>
                 </div>
             </div>
             
             <!-- Program 2 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.2s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <!-- Decorative corner accent -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="mb-6 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Feed. Teach. Love.</h2>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Feed. Teach. Love.</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Providing meals, education, and love to children in need. Nourishing bodies, 
                     minds, and hearts in communities across the Philippines and US. Every child 
@@ -94,24 +140,45 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                        Support This Program
+                    <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-heart"></i>
+                            Support This Program
+                        </span>
                     </a>
-                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                        Volunteer
+                    <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </span>
                     </a>
                 </div>
             </div>
             
             <!-- Program 3 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/04.png" alt="Mental Health & Wellness" class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.3s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <!-- Decorative corner accent -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="mb-6 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/04.png" alt="Mental Health & Wellness" 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-brain"></i>
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Mental Health & Wellness</h2>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Mental Health & Wellness</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Supporting mental health and emotional well-being through counseling, support groups, 
                     and wellness programs. We believe mental health is just as important as physical health.
@@ -135,21 +202,39 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                        Support This Program
+                    <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-heart"></i>
+                            Support This Program
+                        </span>
                     </a>
-                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                        Volunteer
+                    <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </span>
                     </a>
                 </div>
             </div>
             
             <!-- Program 4 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" class="w-full h-48 object-contain rounded-lg">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.4s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <!-- Decorative corner accent -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="mb-6 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" 
+                             class="w-full h-48 object-contain transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Youth Camps (Yes to Life!)</h2>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Youth Camps (Yes to Life!)</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Transformative camp experiences that inspire youth to say "Yes to Life!" Building 
                     confidence, community, and character through outdoor activities, mentorship, and 
@@ -174,24 +259,45 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="{% url 'events' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                        View Upcoming Camps
+                    <a href="{% url 'events' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-calendar-alt"></i>
+                            View Upcoming Camps
+                        </span>
                     </a>
-                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                        Volunteer
+                    <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </span>
                     </a>
                 </div>
             </div>
             
             <!-- Program 5 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Educ.png" alt="Education & Training" class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.5s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <!-- Decorative corner accent -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="mb-6 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/Educ.png" alt="Education & Training" 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-book"></i>
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Education & Training</h2>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Education & Training</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Providing educational opportunities and skills training to empower individuals and 
                     communities for long-term success. Education is the foundation for transformation.
@@ -215,21 +321,39 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                        Support This Program
+                    <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-heart"></i>
+                            Support This Program
+                        </span>
                     </a>
-                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                        Volunteer
+                    <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </span>
                     </a>
                 </div>
             </div>
             
             <!-- Program 6 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/tshirt_rebuild_edited.jpg" alt="Disaster Relief" class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.6s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <!-- Decorative corner accent -->
+                <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="mb-6 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/tshirt_rebuild_edited.jpg" alt="Disaster Relief" 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <h2 class="text-3xl font-bold heading-font text-navy mb-4">Disaster Relief</h2>
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Disaster Relief</h2>
                 <p class="text-gray-700 leading-relaxed mb-6">
                     Responding to natural disasters with immediate aid and long-term rebuilding efforts. 
                     We show up when communities need us most, providing both emergency relief and 
@@ -254,11 +378,19 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="{% url 'donate' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                        Support This Program
+                    <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-heart"></i>
+                            Support This Program
+                        </span>
                     </a>
-                    <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                        Volunteer
+                    <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                        <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            <i class="fas fa-hands-helping"></i>
+                            Volunteer
+                        </span>
                     </a>
                 </div>
             </div>
@@ -267,24 +399,58 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
-            Support Our Programs
+<section class="py-24 bg-gradient-to-br from-navy via-charcoal to-navy text-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+            <span class="relative z-10">Support Our Programs</span>
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
         </h2>
-        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed scroll-fade delay-200">
             Every program makes a difference. Your support helps us continue walking with people 
             and transforming communities.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
-                Give a Love Gift
+            <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-heart"></i>
+                    Give a Love Gift
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </a>
-            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
-                Get Involved
+            <a href="{% url 'contact' %}" class="group/btn border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all relative overflow-hidden">
+                <span class="absolute inset-0 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-hands-helping"></i>
+                    Get Involved
+                </span>
             </a>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
 {% endblock %}
 

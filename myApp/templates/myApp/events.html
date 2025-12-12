@@ -4,14 +4,25 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">UPCOMING & PAST EVENTS</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                Events
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    UPCOMING & PAST EVENTS
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Events</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 Join us for retreats, camps, and community gatherings
             </p>
         </div>
@@ -19,25 +30,45 @@
 </section>
 
 <!-- Upcoming Events -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-12">
-            <p class="micro-text text-gold mb-4">UPCOMING</p>
-            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
-                Upcoming Events
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-12 fade-in">
+            <div class="inline-block mb-4">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    UPCOMING
+                </p>
+            </div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font text-navy mb-4 relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Upcoming Events</span>
+                <span class="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full"></span>
             </h2>
         </div>
         
         <!-- Featured Event - Retreat -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-xl mb-12 card-hover">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-xl mb-12 card-hover group fade-in relative" style="animation-delay: 0.1s;">
+            <!-- Gradient border on hover -->
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
             <div class="grid grid-cols-1 lg:grid-cols-2">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/Heart.png" alt="A Heart of Remembrance" class="w-full h-full object-cover">
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/Heart.png" alt="A Heart of Remembrance" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-8 lg:p-12">
-                    <p class="micro-text text-gold mb-4">FEATURED EVENT</p>
-                    <h3 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4">
-                        A Heart of Remembrance
+                    <div class="inline-block mb-4">
+                        <p class="micro-text text-gold mb-4 tracking-wider relative inline-block">
+                            <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                            FEATURED EVENT
+                        </p>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold heading-font text-navy mb-6 group-hover:text-gold transition-colors duration-300 relative inline-block">
+                        <span class="relative z-10">A Heart of Remembrance</span>
+                        <span class="absolute -bottom-2 left-0 w-20 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                     </h3>
                     <div class="space-y-3 mb-6">
                         <p class="text-lg text-gray-700">
@@ -55,11 +86,19 @@
                         This retreat offers a unique opportunity to connect with yourself, others, and the divine.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="{% url 'contact' %}" class="bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center">
-                            View Details
+                        <a href="{% url 'contact' %}" class="group/btn bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-amber transition-all text-center relative overflow-hidden">
+                            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                <i class="fas fa-info-circle"></i>
+                                View Details
+                            </span>
                         </a>
-                        <a href="{% url 'contact' %}" class="border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center">
-                            Join Interest List
+                        <a href="{% url 'contact' %}" class="group/btn border-2 border-navy text-navy px-6 py-3 rounded-full font-semibold hover:bg-navy hover:text-white transition-all text-center relative overflow-hidden">
+                            <span class="absolute inset-0 bg-navy transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                <i class="fas fa-heart"></i>
+                                Join Interest List
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -69,13 +108,22 @@
         <!-- Other Upcoming Events -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Event Card 1 -->
-            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.2s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="mb-4 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
                 <div class="flex items-center gap-3 mb-3">
-                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life Logo" class="w-10 h-10 object-contain">
-                    <h3 class="text-2xl font-bold text-navy">Yes to Life! Youth Camp</h3>
+                    <div class="w-10 h-10 rounded-full overflow-hidden transform transition-transform duration-300 group-hover:scale-110">
+                        <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life Logo" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-2xl font-bold text-navy group-hover:text-gold transition-colors duration-300">Yes to Life! Youth Camp</h3>
                 </div>
                 <p class="text-gray-600 mb-4">
                     <i class="fas fa-calendar text-gold mr-2"></i>
@@ -85,20 +133,31 @@
                     Transformative camp experience for youth ages 12-18. Building confidence, 
                     community, and character through outdoor activities and mentorship.
                 </p>
-                <a href="{% url 'contact' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                <a href="{% url 'contact' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn More 
+                    <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                 </a>
             </div>
             
             <!-- Event Card 2 -->
-            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Gathering.png" alt="Community Gathering" class="w-full h-48 object-cover rounded-lg">
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.3s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="mb-4 relative overflow-hidden rounded-xl group/image">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-50">
+                        <img src="/media/uploads/2025/12/05/Gathering.png" alt="Community Gathering" 
+                             class="w-full h-48 object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
+                    </div>
                 </div>
-                <div class="text-4xl text-teal mb-4">
-                    <i class="fas fa-users"></i>
+                <div class="relative inline-block mb-4">
+                    <div class="text-5xl text-teal mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-teal/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-navy mb-3">Community Gathering</h3>
+                <h3 class="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Community Gathering</h3>
                 <p class="text-gray-600 mb-4">
                     <i class="fas fa-calendar text-gold mr-2"></i>
                     Quarterly
@@ -107,8 +166,9 @@
                     Join us for our quarterly community gatherings. Connect with others, 
                     share stories, and be part of the iRiseUp family.
                 </p>
-                <a href="{% url 'contact' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
+                <a href="{% url 'contact' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                    Learn More 
+                    <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                 </a>
             </div>
         </div>
@@ -116,25 +176,41 @@
 </section>
 
 <!-- Past Events -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-12">
-            <p class="micro-text text-gold mb-4">HIGHLIGHTS</p>
-            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
-                Past Events & Highlights
+<section class="py-24 bg-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-12 fade-in">
+            <div class="inline-block mb-4">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    HIGHLIGHTS
+                </p>
+            </div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font text-navy mb-4 relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Past Events & Highlights</span>
+                <span class="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full"></span>
             </h2>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Past Event 1 -->
-            <div class="bg-off-white rounded-xl overflow-hidden shadow-md card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" class="w-full h-full object-cover">
+            <div class="bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.1s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-3 mb-2">
-                        <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life Logo" class="w-10 h-10 object-contain">
-                        <h3 class="text-2xl font-bold text-navy">Yes to Life! 2024</h3>
+                        <div class="w-10 h-10 rounded-full overflow-hidden transform transition-transform duration-300 group-hover:scale-110">
+                            <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life Logo" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy group-hover:text-gold transition-colors duration-300">Yes to Life! 2024</h3>
                     </div>
                     <p class="text-gray-600 mb-3">
                         <i class="fas fa-calendar text-gold mr-2"></i>
@@ -144,19 +220,25 @@
                         An incredible week of transformation, community, and growth. 
                         Youth left inspired and empowered to say "Yes to Life!"
                     </p>
-                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Read Recap <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'mission_accomplished' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Recap 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Past Event 2 -->
-            <div class="bg-off-white rounded-xl overflow-hidden shadow-md card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." class="w-full h-full object-cover">
+            <div class="bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.2s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-2">Feed. Teach. Love. Outreach</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">Feed. Teach. Love. Outreach</h3>
                     <p class="text-gray-600 mb-3">
                         <i class="fas fa-calendar text-gold mr-2"></i>
                         Philippines, 2024
@@ -165,19 +247,25 @@
                         Serving hundreds of children with meals, education, and love. 
                         A powerful reminder of why we do what we do.
                     </p>
-                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Read Story <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'mission_accomplished' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Story 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Past Event 3 -->
-            <div class="bg-off-white rounded-xl overflow-hidden shadow-md card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership Summit" class="w-full h-full object-cover">
+            <div class="bg-off-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.3s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership Summit" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-2">Leadership Summit</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-2 group-hover:text-gold transition-colors duration-300">Leadership Summit</h3>
                     <p class="text-gray-600 mb-3">
                         <i class="fas fa-calendar text-gold mr-2"></i>
                         Fall 2024
@@ -186,8 +274,9 @@
                         Empowering leaders from across our communities to create lasting change 
                         and build stronger networks of support.
                     </p>
-                    <a href="{% url 'mission_accomplished' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Read Recap <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'mission_accomplished' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Read Recap 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
@@ -196,24 +285,58 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
-            Join Us at Our Next Event
+<section class="py-24 bg-gradient-to-br from-navy via-charcoal to-navy text-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+            <span class="relative z-10">Join Us at Our Next Event</span>
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
         </h2>
-        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed scroll-fade delay-200">
             Whether it's a retreat, camp, or community gathering, we'd love to have you with us. 
             Connect with us to stay updated on upcoming events.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'contact' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
-                Get Event Updates
+            <a href="{% url 'contact' %}" class="group/btn bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-bell"></i>
+                    Get Event Updates
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </a>
-            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
-                Contact Us
+            <a href="{% url 'contact' %}" class="group/btn border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all relative overflow-hidden">
+                <span class="absolute inset-0 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </span>
             </a>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
 {% endblock %}
 

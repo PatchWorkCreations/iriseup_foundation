@@ -4,14 +4,25 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">OUR FOUNDATION</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                Core Beliefs
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    OUR FOUNDATION
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Core Beliefs</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 The principles that guide everything we do
             </p>
         </div>
@@ -19,16 +30,23 @@
 </section>
 
 <!-- Core Beliefs Grid -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             <!-- Belief 1 -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-heart"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in cursor-pointer hover:-translate-y-2 hover:scale-[1.02]" style="animation-delay: 0.1s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-2xl font-bold heading-font text-navy mb-4">Compassion</h2>
-                <p class="text-gray-700 leading-relaxed">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Compassion</h2>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     We believe in meeting people where they are with love and understanding. 
                     Compassion is not just feeling for others—it's taking action to alleviate 
                     suffering and create spaces of healing.
@@ -36,12 +54,15 @@
             </div>
             
             <!-- Belief 2 -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-                <div class="text-5xl text-teal mb-4">
-                    <i class="fas fa-users"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in cursor-pointer hover:-translate-y-2 hover:scale-[1.02]" style="animation-delay: 0.2s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-teal mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-teal/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-2xl font-bold heading-font text-navy mb-4">Belonging</h2>
-                <p class="text-gray-700 leading-relaxed">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-4 group-hover:text-teal transition-colors duration-300">Belonging</h2>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     Everyone deserves to feel seen, valued, and included. We create communities 
                     where people can be their authentic selves and find their place in the world. 
                     Belonging is not a privilege—it's a fundamental human need.
@@ -49,21 +70,31 @@
             </div>
             
             <!-- Quote Section -->
-            <div class="md:col-span-2 bg-gradient-to-br from-gold/10 to-teal/10 rounded-xl p-8 text-center">
-                <blockquote class="text-2xl italic text-navy mb-4">
+            <div class="md:col-span-2 bg-gradient-to-br from-gold/10 via-teal/10 to-gold/10 rounded-2xl p-10 md:p-12 text-center relative overflow-hidden group fade-in" style="animation-delay: 0.3s;">
+                <!-- Decorative quotation marks -->
+                <div class="absolute top-4 left-4 text-gold/20 text-7xl font-serif leading-none opacity-50">"</div>
+                <div class="absolute bottom-4 right-4 text-gold/20 text-7xl font-serif leading-none opacity-50 transform rotate-180">"</div>
+                
+                <blockquote class="text-2xl md:text-3xl italic text-navy mb-6 relative z-10 leading-relaxed">
                     "Only be careful, and watch yourselves closely so that you do not forget the things 
                     your eyes have seen or let them fade from your heart as long as you live."
                 </blockquote>
-                <p class="text-gray-600">— Deuteronomy 4:9</p>
+                <p class="text-gray-600 text-lg relative z-10">— Deuteronomy 4:9</p>
+                
+                <!-- Decorative underline -->
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></div>
             </div>
             
             <!-- Belief 3 -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-hand-holding-heart"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in cursor-pointer hover:-translate-y-2 hover:scale-[1.02]" style="animation-delay: 0.4s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-2xl font-bold heading-font text-navy mb-4">Service</h2>
-                <p class="text-gray-700 leading-relaxed">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Service</h2>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     We walk alongside others in their journey toward wholeness. Service is not about 
                     fixing people—it's about being present, offering support, and empowering others 
                     to discover their own strength and potential.
@@ -71,12 +102,15 @@
             </div>
             
             <!-- Belief 4 -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-                <div class="text-5xl text-teal mb-4">
-                    <i class="fas fa-dove"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in cursor-pointer hover:-translate-y-2 hover:scale-[1.02]" style="animation-delay: 0.5s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-teal mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-teal/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-2xl font-bold heading-font text-navy mb-4">Hope</h2>
-                <p class="text-gray-700 leading-relaxed">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-4 group-hover:text-teal transition-colors duration-300">Hope</h2>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     Even in the darkest moments, hope remains. We believe in the power of hope to 
                     transform circumstances and inspire action. Hope is not wishful thinking—it's 
                     the foundation for change and the catalyst for rising.
@@ -84,12 +118,15 @@
             </div>
             
             <!-- Belief 5 -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-                <div class="text-5xl text-gold mb-4">
-                    <i class="fas fa-rocket"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in cursor-pointer hover:-translate-y-2 hover:scale-[1.02]" style="animation-delay: 0.6s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-gold mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gold/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-2xl font-bold heading-font text-navy mb-4">Empowerment</h2>
-                <p class="text-gray-700 leading-relaxed">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-4 group-hover:text-gold transition-colors duration-300">Empowerment</h2>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     We don't just help people—we empower them to help themselves and others. 
                     Empowerment means providing tools, opportunities, and support so that individuals 
                     can rise to their full potential and become agents of change in their communities.
@@ -97,12 +134,15 @@
             </div>
             
             <!-- Belief 6 -->
-            <div class="bg-white rounded-xl p-8 shadow-md">
-                <div class="text-5xl text-teal mb-4">
-                    <i class="fas fa-globe"></i>
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group fade-in cursor-pointer hover:-translate-y-2 hover:scale-[1.02]" style="animation-delay: 0.7s;">
+                <div class="relative inline-block mb-6">
+                    <div class="text-6xl text-teal mb-4 transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-teal/30 rounded-full blur-2xl opacity-0 group-hover:opacity-50 animate-pulse"></div>
                 </div>
-                <h2 class="text-2xl font-bold heading-font text-navy mb-4">Global Community</h2>
-                <p class="text-gray-700 leading-relaxed">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-4 group-hover:text-teal transition-colors duration-300">Global Community</h2>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
                     We are all connected. Our work spans continents because we believe that 
                     transformation in one community creates ripples of hope around the world. 
                     We are ambassadors for belonging, wherever we go.
@@ -113,18 +153,35 @@
 </section>
 
 <!-- Remembrance Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="bg-gradient-to-br from-navy/5 to-charcoal/5 rounded-xl p-12">
-            <h2 class="text-3xl font-bold heading-font text-navy mb-6">
-                A Heart of Remembrance
+<section class="py-24 bg-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+        <div class="bg-gradient-to-br from-navy/5 via-charcoal/5 to-navy/5 rounded-2xl p-12 md:p-16 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+            <!-- Decorative corner accents -->
+            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-teal/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <!-- Heart icon accent -->
+            <div class="absolute top-4 left-4 text-gold/20 text-4xl opacity-50">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="absolute bottom-4 right-4 text-teal/20 text-4xl opacity-50">
+                <i class="fas fa-heart"></i>
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold heading-font text-navy mb-8 relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">A Heart of Remembrance</span>
+                <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
             </h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 relative z-10 scroll-fade delay-200">
                 We remember those who have gone before us, those who have shaped us, and those 
                 whose stories inspire us. Remembrance is not about living in the past—it's about 
                 honoring what has been, learning from it, and moving forward with wisdom and grace.
             </p>
-            <p class="text-lg text-gray-700 leading-relaxed">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium relative z-10 scroll-fade delay-300">
                 In remembering, we find strength. In honoring, we find purpose. In rising, we find hope.
             </p>
         </div>
@@ -132,24 +189,58 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
-            Live These Values With Us
+<section class="py-24 bg-gradient-to-br from-navy via-charcoal to-navy text-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+            <span class="relative z-10">Live These Values With Us</span>
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
         </h2>
-        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed scroll-fade delay-200">
             Our beliefs are not just words—they're the foundation of everything we do. 
             Join us in living out these values and making a difference in the world.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'what_we_do' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
-                See Our Programs
+            <a href="{% url 'what_we_do' %}" class="group/btn bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-list"></i>
+                    See Our Programs
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </a>
-            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
-                Get Involved
+            <a href="{% url 'contact' %}" class="group/btn border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all relative overflow-hidden">
+                <span class="absolute inset-0 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-hands-helping"></i>
+                    Get Involved
+                </span>
             </a>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
 {% endblock %}
 

@@ -4,14 +4,25 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">GIVE A LOVE GIFT</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                Give a Love Gift
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    GIVE A LOVE GIFT
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Give a Love Gift</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 Your generosity helps children eat, learn, heal, and hope again.
             </p>
         </div>
@@ -19,16 +30,24 @@
 </section>
 
 <!-- Donation Form Section -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 md:p-12 fade-in relative overflow-hidden group">
+            <!-- Gradient border on hover -->
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/10 via-teal/5 to-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+            
             <!-- One-time / Monthly Toggle -->
             <div class="flex justify-center mb-8">
-                <div class="bg-gray-100 rounded-full p-1 inline-flex">
-                    <button id="one-time-btn" class="px-6 py-2 rounded-full font-semibold bg-gold text-navy transition-all">
-                        One-time
+                <div class="bg-gray-100 rounded-full p-1 inline-flex shadow-inner">
+                    <button id="one-time-btn" class="px-6 py-2 rounded-full font-semibold bg-gold text-navy transition-all transform hover:scale-105 relative overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                        <span class="relative z-10">One-time</span>
                     </button>
-                    <button id="monthly-btn" class="px-6 py-2 rounded-full font-semibold text-gray-600 hover:text-navy transition-all">
+                    <button id="monthly-btn" class="px-6 py-2 rounded-full font-semibold text-gray-600 hover:text-navy transition-all transform hover:scale-105">
                         Monthly
                     </button>
                 </div>
@@ -38,21 +57,25 @@
             <div class="mb-8">
                 <p class="text-sm font-semibold text-gray-700 mb-4">Select an amount:</p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
-                        <div class="text-2xl font-bold text-navy mb-1">$25</div>
-                        <div class="text-xs text-gray-600">One week of meals</div>
+                    <button class="donation-amount group/amount border-2 border-gray-300 rounded-xl p-4 hover:border-gold hover:bg-gold/5 transition-all text-left relative overflow-hidden transform hover:scale-105 hover:shadow-lg">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-teal/5 opacity-0 group-hover/amount:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-2xl font-bold text-navy mb-1 relative z-10 group-hover/amount:text-gold transition-colors duration-300">$25</div>
+                        <div class="text-xs text-gray-600 relative z-10">One week of meals</div>
                     </button>
-                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
-                        <div class="text-2xl font-bold text-navy mb-1">$50</div>
-                        <div class="text-xs text-gray-600">Two weeks of meals</div>
+                    <button class="donation-amount group/amount border-2 border-gray-300 rounded-xl p-4 hover:border-gold hover:bg-gold/5 transition-all text-left relative overflow-hidden transform hover:scale-105 hover:shadow-lg">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-teal/5 opacity-0 group-hover/amount:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-2xl font-bold text-navy mb-1 relative z-10 group-hover/amount:text-gold transition-colors duration-300">$50</div>
+                        <div class="text-xs text-gray-600 relative z-10">Two weeks of meals</div>
                     </button>
-                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
-                        <div class="text-2xl font-bold text-navy mb-1">$100</div>
-                        <div class="text-xs text-gray-600">One month of support</div>
+                    <button class="donation-amount group/amount border-2 border-gray-300 rounded-xl p-4 hover:border-gold hover:bg-gold/5 transition-all text-left relative overflow-hidden transform hover:scale-105 hover:shadow-lg">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-teal/5 opacity-0 group-hover/amount:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-2xl font-bold text-navy mb-1 relative z-10 group-hover/amount:text-gold transition-colors duration-300">$100</div>
+                        <div class="text-xs text-gray-600 relative z-10">One month of support</div>
                     </button>
-                    <button class="donation-amount border-2 border-gray-300 rounded-lg p-4 hover:border-gold hover:bg-gold/5 transition-all text-left">
-                        <div class="text-2xl font-bold text-navy mb-1">$250</div>
-                        <div class="text-xs text-gray-600">Transform a life</div>
+                    <button class="donation-amount group/amount border-2 border-gray-300 rounded-xl p-4 hover:border-gold hover:bg-gold/5 transition-all text-left relative overflow-hidden transform hover:scale-105 hover:shadow-lg">
+                        <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-teal/5 opacity-0 group-hover/amount:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-2xl font-bold text-navy mb-1 relative z-10 group-hover/amount:text-gold transition-colors duration-300">$250</div>
+                        <div class="text-xs text-gray-600 relative z-10">Transform a life</div>
                     </button>
                 </div>
             </div>
@@ -61,8 +84,8 @@
             <div class="mb-8">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Or enter a custom amount:</label>
                 <div class="relative">
-                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
-                    <input type="number" id="custom-amount" placeholder="0.00" class="w-full pl-8 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none text-lg">
+                    <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 text-lg font-semibold">$</span>
+                    <input type="number" id="custom-amount" placeholder="0.00" class="w-full pl-8 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none text-lg transition-all duration-300 focus:ring-2 focus:ring-gold/20">
                 </div>
             </div>
             
@@ -73,22 +96,22 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
-                        <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                        <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-gold/20">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
-                        <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                        <input type="text" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-gold/20">
                     </div>
                 </div>
                 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
-                    <input type="email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                    <input type="email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-gold/20">
                 </div>
                 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
-                    <input type="tel" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none">
+                    <input type="tel" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gold focus:outline-none transition-all duration-300 focus:ring-2 focus:ring-gold/20">
                 </div>
             </div>
             
@@ -104,8 +127,13 @@
             </div>
             
             <!-- Submit Button -->
-            <button class="w-full bg-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber transition-all hover-lift">
-                Complete Donation
+            <button class="group/btn w-full bg-gold text-navy px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-heart"></i>
+                    Complete Donation
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </button>
             
             <!-- Trust Markers -->
@@ -124,55 +152,83 @@
 </section>
 
 <!-- Where Your Gift Goes -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <p class="micro-text text-gold mb-4">IMPACT</p>
-            <h2 class="text-4xl md:text-5xl font-bold heading-font text-navy mb-4">
-                Where Your Gift Goes
+<section class="py-24 bg-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-12 fade-in">
+            <div class="inline-block mb-4">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    IMPACT
+                </p>
+            </div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font text-navy mb-4 relative inline-block">
+                <span class="relative z-10">Where Your Gift Goes</span>
+                <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full"></span>
             </h2>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Impact 1 -->
-            <div class="bg-off-white rounded-xl p-6 text-center">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." class="w-full h-32 object-cover rounded-lg mx-auto">
+            <div class="bg-off-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.1s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="mb-4 relative overflow-hidden rounded-xl group/image">
+                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." 
+                         class="w-full h-32 object-cover rounded-lg mx-auto transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500 rounded-lg"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Feed. Teach. Love.</h3>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Feed. Teach. Love.</h3>
                 <p class="text-gray-600 text-sm">
                     Providing meals, education, and love to children in need
                 </p>
             </div>
             
             <!-- Impact 2 -->
-            <div class="bg-off-white rounded-xl p-6 text-center">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership & Mentorship" class="w-full h-32 object-cover rounded-lg mx-auto">
+            <div class="bg-off-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.2s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <div class="mb-4 relative overflow-hidden rounded-xl group/image">
+                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership & Mentorship" 
+                         class="w-full h-32 object-cover rounded-lg mx-auto transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500 rounded-lg"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Leadership & Mentorship</h3>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Leadership & Mentorship</h3>
                 <p class="text-gray-600 text-sm">
                     Empowering individuals to become leaders in their communities
                 </p>
             </div>
             
             <!-- Impact 3 -->
-            <div class="bg-off-white rounded-xl p-6 text-center">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" class="w-full h-32 object-contain rounded-lg mx-auto">
+            <div class="bg-off-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.3s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <div class="mb-4 relative overflow-hidden rounded-xl group/image">
+                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" 
+                         class="w-full h-32 object-contain rounded-lg mx-auto transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500 rounded-lg"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Youth Camps</h3>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Youth Camps</h3>
                 <p class="text-gray-600 text-sm">
                     Transformative experiences that inspire youth to say "Yes to Life!"
                 </p>
             </div>
             
             <!-- Impact 4 -->
-            <div class="bg-off-white rounded-xl p-6 text-center">
-                <div class="mb-4">
-                    <img src="/media/uploads/2025/12/05/tshirt_rebuild_edited.jpg" alt="Disaster Response" class="w-full h-32 object-cover rounded-lg mx-auto">
+            <div class="bg-off-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-500 card-hover group fade-in relative overflow-hidden" style="animation-delay: 0.4s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                
+                <div class="mb-4 relative overflow-hidden rounded-xl group/image">
+                    <img src="/media/uploads/2025/12/05/tshirt_rebuild_edited.jpg" alt="Disaster Response" 
+                         class="w-full h-32 object-cover rounded-lg mx-auto transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500 rounded-lg"></div>
                 </div>
-                <h3 class="text-xl font-bold text-navy mb-3">Disaster Response</h3>
+                <h3 class="text-xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Disaster Response</h3>
                 <p class="text-gray-600 text-sm">
                     Immediate aid and long-term rebuilding efforts in affected communities
                 </p>
@@ -182,40 +238,64 @@
 </section>
 
 <!-- Transparency Section -->
-<section class="py-20 bg-sand">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold heading-font text-navy mb-6">
-            Transparency & Trust
+<section class="py-24 bg-sand relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold heading-font text-navy mb-6 relative inline-block fade-in">
+            <span class="relative z-10">Transparency & Trust</span>
+            <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full"></span>
         </h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-10 fade-in" style="animation-delay: 0.1s;">
             We believe in transparency and accountability. Your donations directly support our programs, 
             and we're committed to using every dollar wisely to maximize impact.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-                <div class="text-4xl text-gold mb-2">
+            <div class="group hover:bg-white/50 p-6 rounded-2xl transition-all duration-300 fade-in" style="animation-delay: 0.2s;">
+                <div class="text-5xl text-gold mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <p class="font-semibold text-navy">Financial Reports</p>
+                <p class="font-semibold text-navy mb-2 group-hover:text-gold transition-colors duration-300">Financial Reports</p>
                 <p class="text-sm text-gray-600">Annual reports available upon request</p>
             </div>
-            <div>
-                <div class="text-4xl text-teal mb-2">
+            <div class="group hover:bg-white/50 p-6 rounded-2xl transition-all duration-300 fade-in" style="animation-delay: 0.3s;">
+                <div class="text-5xl text-teal mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <p class="font-semibold text-navy">501(c)(3) Status</p>
+                <p class="font-semibold text-navy mb-2 group-hover:text-gold transition-colors duration-300">501(c)(3) Status</p>
                 <p class="text-sm text-gray-600">Tax-deductible donations</p>
             </div>
-            <div>
-                <div class="text-4xl text-gold mb-2">
+            <div class="group hover:bg-white/50 p-6 rounded-2xl transition-all duration-300 fade-in" style="animation-delay: 0.4s;">
+                <div class="text-5xl text-gold mb-3 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <i class="fas fa-handshake"></i>
                 </div>
-                <p class="font-semibold text-navy">Accountability</p>
+                <p class="font-semibold text-navy mb-2 group-hover:text-gold transition-colors duration-300">Accountability</p>
                 <p class="text-sm text-gray-600">Committed to responsible stewardship</p>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
+{% endblock %}
 
 {% block extra_js %}
 <script>
@@ -260,6 +340,5 @@
         });
     });
 </script>
-{% endblock %}
 {% endblock %}
 

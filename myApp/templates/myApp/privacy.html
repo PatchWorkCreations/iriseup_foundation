@@ -4,36 +4,66 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">PRIVACY</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                Privacy Policy
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    PRIVACY
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Privacy Policy</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed mb-4 scroll-fade delay-200">
                 Your privacy is important to us. Learn how we collect, use, and protect your personal information.
             </p>
-            <p class="text-sm text-gray-400 mt-4">Last Updated: December 2024</p>
+            <p class="text-sm md:text-base text-gray-300 mt-4 inline-flex items-center gap-2 scroll-fade delay-300">
+                <i class="fas fa-calendar-alt text-gold"></i>
+                Last Updated: December 2024
+            </p>
         </div>
     </div>
 </section>
 
 <!-- Privacy Policy Content -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <div class="prose prose-lg max-w-none">
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 md:p-12 fade-in relative overflow-hidden group">
+            <!-- Gradient border on hover -->
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/10 via-teal/5 to-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+            
+            <div class="prose prose-lg max-w-none relative z-10">
                 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6">1. Introduction</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 relative inline-block fade-in" style="animation-delay: 0.1s;">
+                    <span class="relative z-10">1. Introduction</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     iRiseUp Foundation ("we," "our," or "us") is committed to protecting your privacy. This Privacy 
                     Policy explains how we collect, use, disclose, and safeguard your information when you visit 
                     our website or interact with our services.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">2. Information We Collect</h2>
-                <h3 class="text-xl font-semibold text-navy mb-4 mt-6">Personal Information</h3>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.2s;">
+                    <span class="relative z-10">2. Information We Collect</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
+                <h3 class="text-xl md:text-2xl font-semibold text-navy mb-4 mt-6 group-hover:text-gold transition-colors duration-300 fade-in" style="animation-delay: 0.25s;">
+                    <i class="fas fa-user-circle text-gold mr-2"></i>
+                    Personal Information
+                </h3>
                 <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     We may collect personal information that you voluntarily provide to us when you:
                 </p>
@@ -49,14 +79,20 @@
                     information, and any other information you choose to provide.
                 </p>
 
-                <h3 class="text-xl font-semibold text-navy mb-4 mt-6">Automatically Collected Information</h3>
+                <h3 class="text-xl md:text-2xl font-semibold text-navy mb-4 mt-6 group-hover:text-gold transition-colors duration-300 fade-in" style="animation-delay: 0.3s;">
+                    <i class="fas fa-server text-teal mr-2"></i>
+                    Automatically Collected Information
+                </h3>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     When you visit our website, we may automatically collect certain information about your device, 
                     including your IP address, browser type, operating system, access times, and the pages you 
                     have viewed directly before and after accessing our website.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">3. How We Use Your Information</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.35s;">
+                    <span class="relative z-10">3. How We Use Your Information</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     We use the information we collect to:
                 </p>
@@ -70,7 +106,10 @@
                     <li>Manage volunteer and program registrations</li>
                 </ul>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">4. Information Sharing and Disclosure</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.4s;">
+                    <span class="relative z-10">4. Information Sharing and Disclosure</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     We do not sell, trade, or rent your personal information to third parties. We may share your 
                     information only in the following circumstances:
@@ -86,7 +125,10 @@
                     or others.</li>
                 </ul>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">5. Data Security</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.45s;">
+                    <span class="relative z-10">5. Data Security</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     We implement appropriate technical and organizational security measures to protect your personal 
                     information against unauthorized access, alteration, disclosure, or destruction. However, no 
@@ -94,7 +136,10 @@
                     guarantee absolute security.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">6. Your Rights</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.5s;">
+                    <span class="relative z-10">6. Your Rights</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-4">
                     Depending on your location, you may have certain rights regarding your personal information, 
                     including:
@@ -110,7 +155,10 @@
                     To exercise these rights, please <a href="{% url 'contact' %}" class="text-gold hover:text-amber font-semibold">contact us</a>.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">7. Cookies and Tracking Technologies</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.55s;">
+                    <span class="relative z-10">7. Cookies and Tracking Technologies</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Our website may use cookies and similar tracking technologies to enhance your experience. 
                     Cookies are small data files stored on your device that help us improve our website's 
@@ -118,39 +166,73 @@
                     through your browser settings.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">8. Children's Privacy</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.6s;">
+                    <span class="relative z-10">8. Children's Privacy</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Our website is not intended for children under the age of 13. We do not knowingly collect 
                     personal information from children under 13. If we become aware that we have collected 
                     information from a child under 13, we will take steps to delete such information promptly.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">9. Links to Other Websites</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.65s;">
+                    <span class="relative z-10">9. Links to Other Websites</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Our website may contain links to other websites that are not operated by us. We are not 
                     responsible for the privacy practices of these third-party websites. We encourage you to 
                     review the privacy policies of any website you visit.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">10. Changes to This Privacy Policy</h2>
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.7s;">
+                    <span class="relative z-10">10. Changes to This Privacy Policy</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     We may update this Privacy Policy from time to time. We will notify you of any changes by 
                     posting the new Privacy Policy on this page and updating the "Last Updated" date. You are 
                     advised to review this Privacy Policy periodically for any changes.
                 </p>
 
-                <h2 class="text-2xl font-bold heading-font text-navy mb-6 mt-8">11. Contact Us</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy mb-6 mt-10 relative inline-block fade-in" style="animation-delay: 0.75s;">
+                    <span class="relative z-10">11. Contact Us</span>
+                    <span class="absolute -bottom-1 left-0 w-16 h-1 bg-gradient-to-r from-gold via-teal to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 fade-in" style="animation-delay: 0.8s;">
                     If you have any questions about this Privacy Policy or our privacy practices, please contact us:
                 </p>
-                <div class="bg-gray-50 rounded-lg p-6 mb-6">
-                    <p class="text-lg text-gray-700 mb-2"><strong>iRiseUp Foundation</strong></p>
-                    <p class="text-lg text-gray-700 mb-2">Columbus, OH</p>
-                    <p class="text-lg text-gray-700 mb-2">Email: <a href="mailto:info@iriseupfoundation.org" class="text-gold hover:text-amber font-semibold">info@iriseupfoundation.org</a></p>
-                    <p class="text-lg text-gray-700">Phone: (614) 555-0123</p>
+                <div class="bg-gradient-to-br from-gray-50 to-off-white rounded-xl p-6 md:p-8 mb-6 shadow-md hover:shadow-lg transition-all duration-300 fade-in group/contact" style="animation-delay: 0.85s;">
+                    <div class="space-y-3">
+                        <p class="text-lg md:text-xl text-gray-700 mb-2">
+                            <i class="fas fa-building text-gold mr-2"></i>
+                            <strong class="group-hover/contact:text-gold transition-colors duration-300">iRiseUp Foundation</strong>
+                        </p>
+                        <p class="text-lg text-gray-700 mb-2">
+                            <i class="fas fa-map-marker-alt text-teal mr-2"></i>
+                            Columbus, OH
+                        </p>
+                        <p class="text-lg text-gray-700 mb-2">
+                            <i class="fas fa-envelope text-gold mr-2"></i>
+                            Email: <a href="mailto:info@iriseupfoundation.org" class="text-gold hover:text-amber font-semibold transition-colors duration-300 inline-flex items-center gap-1">
+                                info@iriseupfoundation.org
+                                <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            <i class="fas fa-phone text-teal mr-2"></i>
+                            Phone: <a href="tel:+16145550123" class="text-gold hover:text-amber font-semibold transition-colors duration-300">
+                                (614) 555-0123
+                            </a>
+                        </p>
+                    </div>
                 </div>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    You can also <a href="{% url 'contact' %}" class="text-gold hover:text-amber font-semibold">visit our contact page</a> 
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed fade-in" style="animation-delay: 0.9s;">
+                    You can also <a href="{% url 'contact' %}" class="text-gold hover:text-amber font-semibold transition-colors duration-300 inline-flex items-center gap-1">
+                        visit our contact page
+                        <i class="fas fa-arrow-right transform hover:translate-x-1 transition-transform duration-300"></i>
+                    </a> 
                     to send us a message.
                 </p>
 
@@ -158,5 +240,50 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+    
+    /* Enhanced list styling */
+    .prose ul li {
+        position: relative;
+        padding-left: 1.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .prose ul li:hover {
+        color: #1a2332;
+        transform: translateX(5px);
+    }
+    
+    .prose ul li::marker {
+        color: #d4af37;
+    }
+    
+    /* Enhanced link styling */
+    .prose a {
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .prose a:hover {
+        text-decoration: underline;
+    }
+</style>
 {% endblock %}
 

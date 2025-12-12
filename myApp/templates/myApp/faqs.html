@@ -40,6 +40,13 @@
         position: relative;
         background: white;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .flip-card:hover .flip-card-front {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        border-color: rgba(212, 175, 55, 0.3);
     }
     
     .flip-card-back {
@@ -50,8 +57,9 @@
         background: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
         color: #1a2332;
         transform: rotateY(180deg);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         overflow: visible;
+        border: 2px solid rgba(26, 35, 50, 0.1);
     }
     
     .flip-card-front h2 {
@@ -213,14 +221,25 @@
     });
 </script>
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">FAQ</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                Frequently Asked Questions
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    FAQ
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Frequently Asked Questions</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 Find answers to common questions about iRiseUp Foundation, our programs, and how you can get involved.
             </p>
         </div>
@@ -228,20 +247,24 @@
 </section>
 
 <!-- FAQs Section -->
-<section class="py-20 bg-off-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-24 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div>
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.1s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">What is iRiseUp Foundation?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">What is iRiseUp Foundation?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">What is iRiseUp Foundation?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">What is iRiseUp Foundation?</h2>
                         <p class="text-lg leading-relaxed">
                             iRiseUp Foundation is a registered 501(c)(3) non-profit organization dedicated to creating 
                             spaces where individuals and communities can find hope, healing, and empowerment. We support 
@@ -253,16 +276,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.2s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">How can I donate?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">How can I donate?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">How can I donate?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">How can I donate?</h2>
                         <p class="text-lg leading-relaxed">
                             You can donate through our website by clicking the "Give a Love Gift" button in the navigation 
                             or visiting our <a href="{% url 'donate' %}" class="text-navy hover:underline font-semibold">Donate page</a>. 
@@ -277,16 +300,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.3s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">How can I volunteer?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">How can I volunteer?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">How can I volunteer?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">How can I volunteer?</h2>
                         <p class="text-lg leading-relaxed">
                             We welcome volunteers! You can get involved in various ways:
                         </p>
@@ -306,16 +329,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.4s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">Where do you operate?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">Where do you operate?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">Where do you operate?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">Where do you operate?</h2>
                         <p class="text-lg leading-relaxed">
                             iRiseUp Foundation operates programs in the United States and the Philippines. Our main 
                             office is located in Columbus, OH, but we serve communities across both countries through 
@@ -326,16 +349,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.5s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">What programs do you offer?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">What programs do you offer?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">What programs do you offer?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">What programs do you offer?</h2>
                         <p class="text-lg leading-relaxed">
                             We support multiple programs including:
                         </p>
@@ -355,16 +378,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.6s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">Are donations tax-deductible?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">Are donations tax-deductible?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">Are donations tax-deductible?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">Are donations tax-deductible?</h2>
                         <p class="text-lg leading-relaxed">
                             Yes! iRiseUp Foundation is a registered 501(c)(3) non-profit organization, so all donations 
                             are tax-deductible to the extent allowed by law. You will receive a receipt for your donation 
@@ -375,16 +398,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.7s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">How can I stay updated on events and news?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">How can I stay updated on events and news?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">How can I stay updated on events and news?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">How can I stay updated on events and news?</h2>
                         <p class="text-lg leading-relaxed">
                             You can stay connected with us through:
                         </p>
@@ -398,16 +421,16 @@
             </div>
 
             <!-- FAQ Item -->
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card fade-in" onclick="this.classList.toggle('flipped')" style="animation-delay: 0.8s;">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">Can I partner with iRiseUp Foundation?</h2>
-                        <p class="text-gray-600">Click to flip and learn more</p>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font text-navy">Can I partner with iRiseUp Foundation?</h2>
+                        <p class="text-gray-600 mt-2">Click to flip and learn more</p>
                     </div>
                     <div class="flip-card-back">
                         <i class="fas fa-sync-alt flip-icon"></i>
-                        <h2 class="text-2xl font-bold heading-font">Can I partner with iRiseUp Foundation?</h2>
+                        <h2 class="text-2xl md:text-3xl font-bold heading-font">Can I partner with iRiseUp Foundation?</h2>
                         <p class="text-lg leading-relaxed">
                             We're always open to partnerships with organizations, businesses, and individuals who share 
                             our vision. Whether you're interested in corporate sponsorship, program collaboration, or 
@@ -420,16 +443,43 @@
         </div>
 
         <!-- Still Have Questions Section -->
-        <div class="mt-16 bg-gradient-to-br from-gold to-amber rounded-xl shadow-lg p-8 text-center">
-            <h2 class="text-3xl font-bold heading-font text-navy mb-4">Still Have Questions?</h2>
-            <p class="text-lg text-navy mb-6">
+        <div class="mt-16 bg-gradient-to-br from-gold to-amber rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 md:p-10 text-center fade-in relative overflow-hidden group" style="animation-delay: 0.9s;">
+            <!-- Decorative gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-gold/20 via-amber/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-bold heading-font text-navy mb-4 relative z-10">Still Have Questions?</h2>
+            <p class="text-lg md:text-xl text-navy mb-8 leading-relaxed relative z-10">
                 We're here to help! Get in touch with us and we'll be happy to answer any questions you may have.
             </p>
-            <a href="{% url 'contact' %}" class="inline-block bg-navy text-white px-8 py-4 rounded-full font-semibold hover:bg-charcoal transition-all hover-lift">
-                Contact Us
+            <a href="{% url 'contact' %}" class="group/btn inline-block bg-navy text-white px-8 py-4 rounded-full font-semibold hover:bg-charcoal transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </a>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
 {% endblock %}
 

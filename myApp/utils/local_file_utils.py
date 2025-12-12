@@ -146,3 +146,5 @@ def delete_local_image(image_path):
 
 
 
+
+

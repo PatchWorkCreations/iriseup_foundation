@@ -4,14 +4,25 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-20 -mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
-        <div class="max-w-3xl mx-auto text-center">
-            <p class="micro-text text-gold mb-4">IMPACT STORIES</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-6">
-                Mission Accomplished
+<section class="bg-gradient-to-br from-navy via-charcoal to-navy text-white pt-20 pb-24 -mt-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 relative z-10">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="inline-block mb-6">
+                <p class="micro-text text-gold mb-4 tracking-wider relative inline-block scroll-fade">
+                    <span class="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-1 bg-gold rounded-full animate-pulse"></span>
+                    IMPACT STORIES
+                </p>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold heading-font mb-8 leading-tight relative inline-block scroll-fade delay-100">
+                <span class="relative z-10">Mission Accomplished</span>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+                <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
             </h1>
-            <p class="text-xl text-gray-300 leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 leading-relaxed scroll-fade delay-200">
                 Real stories of transformation and hope
             </p>
         </div>
@@ -19,16 +30,25 @@
 </section>
 
 <!-- Impact Stories Grid -->
-<section class="pt-20 pb-0 bg-off-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section class="pt-24 pb-0 bg-off-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gold/5 via-transparent to-teal/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-teal/5 via-transparent to-gold/5 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             <!-- Story 1 - CLICK -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
-                    <img src="/media/uploads/2025/12/05/Click.avif" alt="CLICK" class="w-full h-full object-contain p-4">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.1s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center relative group/image">
+                    <img src="/media/uploads/2025/12/05/Click.avif" alt="CLICK" 
+                         class="w-full h-full object-contain p-4 transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-3">CLICK</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">CLICK</h3>
                     <p class="text-sm text-gray-500 mb-4">Computer Learning for Inner City Kids</p>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Providing technology access and education to underserved youth, opening doors 
@@ -43,19 +63,25 @@
                             <li>• Scholarships awarded</li>
                         </ul>
                     </div>
-                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'donate' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Story 2 - Rebuilding Philippines -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/tshirt_rebuild_edited.jpg" alt="Rebuilding Philippines" class="w-full h-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.2s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/tshirt_rebuild_edited.jpg" alt="Rebuilding Philippines" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-3">Rebuilding Philippines</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Rebuilding Philippines</h3>
                     <p class="text-sm text-gray-500 mb-4">Disaster Response & Recovery</p>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Responding to natural disasters with immediate aid and long-term rebuilding efforts. 
@@ -70,21 +96,29 @@
                             <li>• Communities restored</li>
                         </ul>
                     </div>
-                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'donate' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Story 3 - Yes to Life! -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" class="w-full h-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.3s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-3 mb-3">
-                        <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life Logo" class="w-10 h-10 object-contain">
-                        <h3 class="text-2xl font-bold text-navy">Yes to Life! Youth Camp</h3>
+                        <div class="w-10 h-10 rounded-full overflow-hidden transform transition-transform duration-300 group-hover:scale-110">
+                            <img src="/media/uploads/2025/12/05/Yes_To_Life_Logo_square.webp" alt="Yes to Life Logo" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy group-hover:text-gold transition-colors duration-300">Yes to Life! Youth Camp</h3>
                     </div>
                     <p class="text-sm text-gray-500 mb-4">Transformative Camp Experience</p>
                     <p class="text-gray-700 leading-relaxed mb-4">
@@ -100,19 +134,25 @@
                             <li>• Confidence built</li>
                         </ul>
                     </div>
-                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'donate' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Story 4 - Feed. Teach. Love. -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." class="w-full h-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.4s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/FeedTeachLove.png" alt="Feed. Teach. Love." 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-3">Feed. Teach. Love.</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Feed. Teach. Love.</h3>
                     <p class="text-sm text-gray-500 mb-4">Nourishing Bodies, Minds & Hearts</p>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Providing meals, education, and love to children in need. Every child deserves 
@@ -127,19 +167,25 @@
                             <li>• Educational support provided</li>
                         </ul>
                     </div>
-                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'donate' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Story 5 - Leadership Development -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership Development" class="w-full h-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.5s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/Leadership.png" alt="Leadership Development" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-3">Leadership Development</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Leadership Development</h3>
                     <p class="text-sm text-gray-500 mb-4">Empowering Future Leaders</p>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Empowering individuals to become leaders in their communities. Through mentorship 
@@ -154,19 +200,25 @@
                             <li>• Community impact multiplied</li>
                         </ul>
                     </div>
-                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'donate' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
             
             <!-- Story 6 - Mental Health Support -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover">
-                <div class="aspect-[4/3] overflow-hidden">
-                    <img src="/media/uploads/2025/12/05/04.png" alt="Mental Health & Wellness" class="w-full h-full object-cover">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 card-hover group fade-in relative" style="animation-delay: 0.6s;">
+                <!-- Gradient border on hover -->
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/20 via-teal/10 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
+                <div class="aspect-[4/3] overflow-hidden relative group/image">
+                    <img src="/media/uploads/2025/12/05/04.png" alt="Mental Health & Wellness" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000"></div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-navy mb-3">Mental Health & Wellness</h3>
+                    <h3 class="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">Mental Health & Wellness</h3>
                     <p class="text-sm text-gray-500 mb-4">Supporting Emotional Well-being</p>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Creating safe spaces for healing and growth. Through counseling, support groups, 
@@ -181,8 +233,9 @@
                             <li>• Stigma reduced</li>
                         </ul>
                     </div>
-                    <a href="{% url 'donate' %}" class="text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
-                        Support Similar Initiatives <i class="fas fa-arrow-right ml-2"></i>
+                    <a href="{% url 'donate' %}" class="group/link text-gold font-semibold hover:text-amber transition-colors inline-flex items-center">
+                        Support Similar Initiatives 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
                     </a>
                 </div>
             </div>
@@ -191,24 +244,58 @@
 </section>
 
 <!-- CTA Section -->
-<section class="pt-20 pb-20 bg-gradient-to-br from-navy via-charcoal to-navy text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold heading-font mb-6">
-            Be Part of the Next Story
+<section class="pt-24 pb-24 bg-gradient-to-br from-navy via-charcoal to-navy text-white relative overflow-hidden">
+    <!-- Subtle background decorative elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-gold/10 via-transparent to-teal/10 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tr from-teal/10 via-transparent to-gold/10 rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold heading-font mb-8 leading-tight relative inline-block">
+            <span class="relative z-10">Be Part of the Next Story</span>
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent rounded-full opacity-60"></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 blur-2xl opacity-50 -z-10"></span>
         </h2>
-        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed">
             Every story of transformation starts with someone who said yes. Your support helps us 
             write the next chapter of hope and healing.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{% url 'donate' %}" class="bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift">
-                Give a Love Gift
+            <a href="{% url 'donate' %}" class="group/btn bg-gold text-navy px-8 py-4 rounded-full font-semibold hover:bg-amber transition-all hover-lift relative overflow-hidden">
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-heart"></i>
+                    Give a Love Gift
+                    <i class="fas fa-arrow-right transform group-hover/btn:translate-x-1 transition-transform duration-300"></i>
+                </span>
             </a>
-            <a href="{% url 'contact' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all">
-                Get Involved
+            <a href="{% url 'contact' %}" class="group/btn border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-navy transition-all relative overflow-hidden">
+                <span class="absolute inset-0 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2">
+                    <i class="fas fa-hands-helping"></i>
+                    Get Involved
+                </span>
             </a>
         </div>
     </div>
 </section>
+
+<style>
+    /* Enhanced fade-in animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+</style>
 {% endblock %}
 
